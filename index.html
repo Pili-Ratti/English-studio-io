@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Argentina -->
+  <title>English Studio | Clases de inglés personalizadas online</title>
+  <meta name="description" content="Clases de inglés personalizadas para argentinos. Sin libros de texto genéricos. Cada clase diseñada para vos, tus objetivos y tu nivel. Clase de prueba gratis.">
+  <meta name="keywords" content="clases de inglés online, inglés personalizado, profesor de inglés Argentina, inglés conversacional, inglés para trabajo, aprender inglés Buenos Aires, clases particulares inglés">
+  <meta name="author" content="English Studio IO">
+  <meta name="geo.region" content="AR">
+  <meta name="geo.placename" content="Argentina">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="English Studio | Clases de inglés personalizadas">
+  <meta property="og:description" content="Inglés real, construido para vos. Clase de prueba gratis sin compromiso.">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="es-AR" href="#" data-hreflang-es>
+  <link rel="alternate" hreflang="en" href="#" data-hreflang-en>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & ROOT ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --corkboard: #C9AA5A;
+      --cream: #F5F0E8;
+      --cream-warm: #EDE8DA;
+      --cream-alt: #FAF6EE;
+      --kraft: #D4C5A0;
+      --kraft-section: #C4A84A;
+      --orange: #E07B39;
+      --red: #D63B2F;
+      --teal: #1A4A45;
+      --gold: #D4A017;
+      --navy: #1B3A6B;
+      --charcoal: #1E1E1E;
+      --blue: #2B5EA7;
+      --muted: #6B6B6B;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      background: var(--corkboard);
+      overflow-x: hidden;
+    }
+
+    /* ===== LANGUAGE TOGGLE ===== */
+    .lang-toggle {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      background: var(--cream);
+      border-radius: 24px;
+      padding: 3px;
+      box-shadow: 2px 3px 12px rgba(0,0,0,0.2);
+      gap: 2px;
+    }
+    .lang-btn {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--charcoal);
+      background: transparent;
+    }
+    .lang-btn.active {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    /* ===== UTILITY: TORN PAPER EDGES ===== */
+    .torn-b-1 {
+      clip-path: polygon(0 0,100% 0,100% 91%,97% 95%,94% 90%,91% 95%,88% 91%,85% 96%,82% 92%,79% 97%,76% 93%,73% 98%,70% 94%,67% 99%,64% 95%,61% 99%,58% 94%,55% 98%,52% 93%,49% 97%,46% 92%,43% 96%,40% 92%,37% 97%,34% 92%,31% 96%,28% 91%,25% 95%,22% 90%,19% 94%,16% 90%,13% 95%,10% 91%,7% 96%,4% 92%,0 95%);
+      padding-bottom: 64px;
+    }
+    .torn-b-2 {
+      clip-path: polygon(0 0,100% 0,100% 88%,96% 92%,92% 87%,89% 93%,85% 89%,81% 95%,77% 90%,73% 96%,69% 91%,65% 97%,61% 92%,57% 96%,53% 90%,49% 94%,45% 89%,41% 94%,37% 90%,33% 95%,29% 91%,25% 96%,21% 92%,17% 97%,13% 92%,9% 96%,5% 91%,0 94%);
+      padding-bottom: 64px;
+    }
+    .torn-t-1 {
+      clip-path: polygon(0 7%,3% 4%,6% 8%,9% 3%,12% 7%,15% 2%,18% 6%,21% 1%,24% 5%,27% 9%,30% 4%,33% 8%,36% 3%,39% 7%,42% 2%,45% 6%,48% 1%,51% 5%,54% 10%,57% 4%,60% 8%,63% 3%,66% 7%,69% 2%,72% 6%,75% 1%,78% 5%,81% 9%,84% 4%,87% 8%,90% 3%,93% 7%,96% 2%,100% 5%,100% 100%,0 100%);
+      padding-top: 64px;
+    }
+
+    /* ===== LABEL STICKER ===== */
+    .sticker {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: 'Courier Prime', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 13px;
+      border-radius: 4px;
+    }
+
+    /* ===== PAPER CLIP SVG (reusable inline) ===== */
+    .clip { position: absolute; }
+
+    /* ===== GRAPH PAPER TEXTURE ===== */
+    .graph-paper {
+      background-image:
+        linear-gradient(rgba(100,149,237,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100,149,237,.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    /* ===== SECTION 1: PROBLEM ===== */
+    .s-problem {
+      background: var(--corkboard);
+      padding: 120px 24px 80px;
+      position: relative;
+    }
+
+    /* Corkboard grain texture */
+    .s-problem::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23C9AA5A'/%3E%3Ccircle cx='1' cy='1' r='0.4' fill='%23B89A48' opacity='0.3'/%3E%3Ccircle cx='3' cy='3' r='0.3' fill='%23D4B860' opacity='0.2'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .main-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ---- Headline card ---- */
+    .headline-card {
+      background: var(--cream);
+      transform: rotate(-1deg);
+      padding: 52px 60px 48px;
+      position: relative;
+      box-shadow: 3px 5px 20px rgba(0,0,0,0.14);
+      margin-bottom: 0;
+    }
+    .headline-card .sticker { transform: rotate(2deg); margin-bottom: 20px; display: inline-block; }
+    .headline-card h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 900;
+      font-size: 52px;
+      line-height: 1.05;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+    .headline-card .sub { font-size: 16px; color: var(--muted); }
+
+    /* Binder clip top-center */
+    .binder-top {
+      position: absolute;
+      top: -26px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    /* ---- Problems grid ---- */
+    .problems-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 32px 0 72px;
+    }
+    .p-card {
+      background: var(--cream-alt);
+      padding: 28px 28px 32px;
+      position: relative;
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.11);
+    }
+    .p-card:nth-child(1) { transform: rotate(-1.5deg); }
+    .p-card:nth-child(2) { transform: rotate(1.2deg); }
+    .p-card:nth-child(3) { transform: rotate(2deg); }
+    .p-card:nth-child(4) { transform: rotate(-1deg); }
+    .p-card:nth-child(5) { transform: rotate(1.8deg); }
+    .p-card:nth-child(6) { transform: rotate(-2deg); }
+
+    .p-stamp {
+      font-family: 'Courier Prime', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      display: block;
+      margin-bottom: 12px;
+    }
+    .p-icon { float: right; margin: 0 0 8px 14px; }
+    .p-card p { font-size: 14px; line-height: 1.65; color: var(--charcoal); }
+    .p-clip { position: absolute; top: -13px; right: 18px; }
+
+    /* ---- Torn divider ---- */
+    .torn-divider {
+      height: 56px;
+      background: #F0EAD6;
+      clip-path: polygon(0 100%,2% 55%,5% 75%,8% 45%,11% 65%,14% 38%,17% 60%,20% 30%,23% 55%,26% 28%,29% 50%,32% 70%,35% 42%,38% 62%,41% 35%,44% 58%,47% 30%,50% 52%,53% 25%,56% 50%,59% 70%,62% 40%,65% 62%,68% 33%,71% 55%,74% 22%,77% 48%,80% 68%,83% 38%,86% 60%,89% 33%,92% 56%,95% 28%,98% 48%,100% 38%,100% 100%);
+    }
+
+    /* ---- Solution block ---- */
+    .solution-block {
+      background: #F0EAD6;
+      padding: 64px 60px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .solution-block .sticker { transform: rotate(1.5deg); display: inline-block; margin-bottom: 24px; }
+    .solution-block h2 {
+      font-weight: 900;
+      font-size: 40px;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .solution-block > .s-sub { font-size: 18px; color: var(--charcoal); margin-bottom: 40px; }
+
+    .solution-notes { display: flex; flex-direction: column; gap: 18px; }
+    .s-note {
+      background: var(--cream);
+      padding: 22px 26px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.09);
+    }
+    .s-note-star { width: 22px; height: 22px; flex-shrink: 0; margin-top: 3px; }
+    .s-note h3 { font-weight: 700; font-size: 16px; color: var(--teal); margin-bottom: 5px; }
+    .s-note p { font-size: 14px; line-height: 1.65; color: var(--charcoal); }
+
+    .car-wrap {
+      position: absolute;
+      bottom: -8px;
+      right: -16px;
+      opacity: 0.22;
+      pointer-events: none;
+    }
+
+    /* ===== SECTION 2: PRICING ===== */
+    .s-pricing {
+      background: var(--kraft-section);
+      padding: 120px 24px 100px;
+      position: relative;
+    }
+
+    /* Title card */
+    .pricing-title {
+      max-width: 820px;
+      margin: 0 auto 52px;
+      background: var(--cream);
+      transform: rotate(-0.5deg);
+      padding: 52px 60px;
+      box-shadow: 3px 5px 20px rgba(0,0,0,0.15);
+      text-align: center;
+      position: relative;
+    }
+    .pricing-title .sticker { transform: rotate(-1.5deg); margin-bottom: 20px; display: inline-block; }
+    .pricing-title h2 { font-weight: 900; font-size: 48px; line-height: 1.1; margin-bottom: 12px; }
+    .pricing-title p { font-size: 18px; color: var(--charcoal); }
+    .ptitle-clip { position: absolute; top: -13px; left: 24px; }
+
+    /* Toggle */
+    .toggle-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 52px;
+    }
+    .p-toggle {
+      display: flex;
+      background: var(--cream);
+      border-radius: 32px;
+      padding: 4px;
+      gap: 3px;
+      box-shadow: 2px 3px 14px rgba(0,0,0,0.16);
+    }
+    .t-btn {
+      font-family: 'Courier Prime', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 10px 28px;
+      border-radius: 24px;
+      border: 2px dashed #ccc;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      color: var(--charcoal);
+      background: transparent;
+    }
+    .t-btn.active {
+      background: var(--red);
+      color: #fff;
+      border-color: var(--red);
+    }
+    .toggle-note {
+      font-family: 'Courier Prime', monospace;
+      font-size: 12px;
+      color: var(--charcoal);
+      opacity: 0.65;
+    }
+
+    /* Pricing grid */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto 64px;
+      align-items: start;
+    }
+
+    .pc {
+      background: var(--cream);
+      padding: 44px 32px 36px;
+      position: relative;
+      box-shadow: 4px 6px 24px rgba(0,0,0,0.16);
+    }
+    .pc--conv { transform: rotate(-1deg); }
+    .pc--full {
+      transform: rotate(0deg);
+      background: var(--cream-warm);
+      border: 2.5px solid var(--teal);
+      padding-top: 64px;
+    }
+    .pc--ent { transform: rotate(1deg); background: #E0D5BD; }
+
+    .popular-badge {
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      transform: translateX(-50%) rotate(3deg);
+      background: var(--cream-alt);
+      border: 2px solid var(--red);
+      padding: 5px 16px;
+      font-weight: 900;
+      font-size: 12px;
+      color: var(--red);
+      white-space: nowrap;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .pc .sticker { display: inline-block; margin-bottom: 14px; }
+    .pc--conv .sticker { transform: rotate(2deg); }
+    .pc--full .sticker { transform: rotate(-1.5deg); }
+    .pc--ent .sticker { transform: rotate(2.5deg); }
+
+    .plan-name {
+      font-weight: 900;
+      font-size: 32px;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
+    .pc--full .plan-name { font-size: 34px; }
+    .pc--ent .plan-name { color: var(--navy); }
+
+    .plan-tag {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+    }
+    .plan-desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--charcoal);
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px dashed rgba(0,0,0,0.18);
+    }
+    .plan-inc {
+      list-style: none;
+      margin-bottom: 18px;
+    }
+    .plan-inc li {
+      font-size: 13px;
+      color: var(--charcoal);
+      padding: 4px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .plan-inc li::before {
+      content: '✓';
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .plan-best {
+      font-family: 'Courier Prime', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 22px;
+      line-height: 1.55;
+    }
+
+    /* Price block */
+    .price-block { margin-bottom: 22px; }
+    .price-ind { display: block; }
+    .price-grp { display: none; }
+    .price-main {
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--teal);
+      line-height: 1.3;
+    }
+    .pc--ent .price-main { font-size: 28px; color: var(--navy); }
+    .price-hand {
+      font-family: 'Caveat', cursive;
+      font-size: 15px;
+      color: var(--charcoal);
+      margin-top: 2px;
+    }
+    .price-small {
+      font-size: 12.5px;
+      color: #777;
+      margin-top: 3px;
+    }
+    .price-xs {
+      font-family: 'Courier Prime', monospace;
+      font-size: 11px;
+      color: #888;
+      margin-top: 3px;
+    }
+
+    /* CTA buttons */
+    .cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 13px 22px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    .cta-red {
+      background: var(--red);
+      color: #fff;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.22);
+    }
+    .cta-red:hover { transform: translateY(-2px); box-shadow: 4px 5px 0 rgba(0,0,0,0.28); }
+    .cta-teal {
+      background: var(--teal);
+      color: #fff;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.22);
+    }
+    .cta-teal:hover { transform: translateY(-2px); }
+    .cta-outline {
+      background: #E0D5BD;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+    }
+    .cta-outline:hover { background: var(--teal); color: #fff; }
+    .nc-note {
+      font-family: 'Caveat', cursive;
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+      margin-top: 9px;
+    }
+
+    /* Compass corner decoration */
+    .compass-corner {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      opacity: 0.45;
+    }
+    .star-tl, .star-tr {
+      position: absolute;
+      top: 14px;
+    }
+    .star-tl { left: 14px; }
+    .star-tr { right: 14px; }
+
+    /* ===== TRUST STRIP ===== */
+    .trust-strip {
+      max-width: 900px;
+      margin: 0 auto 64px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 12px;
+      position: relative;
+    }
+    .trust-strip::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 5%;
+      right: 5%;
+      border-top: 2px dashed rgba(0,0,0,0.18);
+    }
+    .t-tag {
+      background: var(--cream);
+      padding: 10px 14px 14px;
+      text-align: center;
+      font-family: 'Courier Prime', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      position: relative;
+      z-index: 1;
+      box-shadow: 2px 3px 10px rgba(0,0,0,0.12);
+      flex: 1;
+      max-width: 210px;
+      line-height: 1.4;
+    }
+    .t-tag::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid #bbb;
+      margin: 0 auto 8px;
+    }
+    .t-tag:nth-child(1) { transform: rotate(-1.5deg); }
+    .t-tag:nth-child(2) { transform: rotate(1deg); }
+    .t-tag:nth-child(3) { transform: rotate(-0.8deg); }
+    .t-tag:nth-child(4) { transform: rotate(1.3deg); }
+
+    /* ===== FAQ ===== */
+    .faq-card {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--cream);
+      padding: 60px 64px 56px;
+      position: relative;
+      box-shadow: 4px 6px 24px rgba(0,0,0,0.15);
+    }
+    .faq-star-pin {
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .faq-card .sticker { display: inline-block; margin-bottom: 14px; }
+    .faq-card h3 { font-weight: 900; font-size: 42px; color: var(--charcoal); margin-bottom: 36px; }
+
+    .faq-item { border-bottom: 1px dashed rgba(0,0,0,0.18); }
+    .faq-q {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 19px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 16.5px;
+      color: var(--charcoal);
+      gap: 16px;
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--orange);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .faq-icon::before { width: 2px; height: 18px; top: 4px; left: 12px; }
+    .faq-icon::after  { width: 18px; height: 2px; top: 12px; left: 4px; }
+    .faq-item.open .faq-icon::before { transform: rotate(90deg); opacity: 0; }
+    .faq-item.open .faq-icon::after  { transform: rotate(45deg); }
+
+    .faq-ans {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-ans { max-height: 280px; }
+    .faq-ans-inner {
+      background: var(--cream-warm);
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--charcoal);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1199px) {
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .pc--ent { grid-column: 1 / -1; max-width: 500px; margin: 0 auto; }
+    }
+    @media (max-width: 767px) {
+      .headline-card { padding: 32px 24px 28px; }
+      .headline-card h1 { font-size: 34px; }
+      .problems-grid { grid-template-columns: 1fr; }
+      .p-card:nth-child(odd)  { transform: rotate(-0.8deg); }
+      .p-card:nth-child(even) { transform: rotate(0.8deg); }
+      .solution-block { padding: 40px 24px 72px; }
+      .solution-block h2 { font-size: 32px; }
+      .pricing-title { padding: 36px 24px; }
+      .pricing-title h2 { font-size: 30px; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .pc--ent { grid-column: auto; max-width: 100%; }
+      .pc--conv { transform: rotate(-0.5deg); }
+      .pc--full { transform: rotate(0.2deg); }
+      .pc--ent  { transform: rotate(0.5deg); }
+      .faq-card { padding: 40px 24px; }
+      .trust-strip { flex-wrap: wrap; }
+      .trust-strip::before { display: none; }
+      .t-tag { max-width: 47%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LANGUAGE TOGGLE -->
+  <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+    <button class="lang-btn" id="btn-es" onclick="setLang('es')" aria-pressed="false">ES</button>
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  SECTION 1 · PROBLEM                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="s-problem">
+    <div class="main-card">
+
+      <!-- HEADLINE CARD -->
+      <div class="headline-card torn-b-1 graph-paper">
+
+        <!-- Binder clip -->
+        <div class="binder-top" aria-hidden="true">
+          <svg width="44" height="40" viewBox="0 0 44 40" fill="none">
+            <rect x="6" y="13" width="32" height="22" rx="2" fill="#888" stroke="#666" stroke-width="1"/>
+            <path d="M6 24 L0 9 L9 7 L13 24" fill="#999" stroke="#666" stroke-width="0.8"/>
+            <path d="M38 24 L44 9 L35 7 L31 24" fill="#999" stroke="#666" stroke-width="0.8"/>
+            <rect x="8" y="15" width="28" height="4" rx="1" fill="#aaa"/>
+          </svg>
+        </div>
+
+        <div class="sticker" data-i18n="s1.tag">THE REAL TALK</div>
+        <h1 data-i18n="s1.h1">Most English classes are stuck in 2003.</h1>
+        <p class="sub" data-i18n="s1.sub">You've probably been there. Let's name it.</p>
+      </div>
+
+      <!-- PROBLEMS GRID -->
+      <div class="problems-grid">
+
+        <!-- CARD 1 -->
+        <div class="p-card">
+          <div class="p-clip" aria-hidden="true">
+            <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+          </div>
+          <span class="p-stamp" data-i18n="p1.stamp">PAGE 47, EXERCISE 3. AGAIN.</span>
+          <svg class="p-icon" aria-hidden="true" width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <path d="M8 6C8 4.895 8.895 4 10 4H30C31.105 4 32 4.895 32 6V34C32 35.105 31.105 36 30 36H10C8.895 36 8 35.105 8 34V6Z" stroke="#1A4A45" stroke-width="1.5"/>
+            <path d="M13 12H27M13 17H27M13 22H22" stroke="#1A4A45" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="20" y1="4" x2="20" y2="36" stroke="#1A4A45" stroke-width="1.5"/>
+          </svg>
+          <p data-i18n="p1.copy">Your teacher opens the student book, reads the dialogue out loud, asks you to repeat it, and calls it a lesson. You've memorized that Janet and Tom are going to the supermarket — but you still freeze when trying to order coffee in real life.</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="p-card">
+          <div class="p-clip" aria-hidden="true">
+            <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+          </div>
+          <span class="p-stamp" data-i18n="p2.stamp">TAILORED TO NO ONE.</span>
+          <svg class="p-icon" aria-hidden="true" width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <rect x="6" y="8" width="22" height="26" rx="2" stroke="#1A4A45" stroke-width="1.5"/>
+            <rect x="12" y="4" width="22" height="26" rx="2" stroke="#1A4A45" stroke-width="1.5" stroke-dasharray="3 1.5"/>
+            <path d="M11 16H22M11 21H22M11 26H18" stroke="#1A4A45" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <p data-i18n="p2.copy">Same worksheet for every student. Whether you're 22 and studying medicine or 38 and prepping for a job interview, you get the exact same material. Nobody asks what you actually need.</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="p-card">
+          <div class="p-clip" aria-hidden="true">
+            <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+          </div>
+          <span class="p-stamp" data-i18n="p3.stamp">NOBODY TALKS LIKE THAT.</span>
+          <svg class="p-icon" aria-hidden="true" width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <path d="M8 10C8 8.895 8.895 8 10 8H30C31.105 8 32 8.895 32 10V24C32 25.105 31.105 26 30 26H18L12 32V26H10C8.895 26 8 25.105 8 24V10Z" stroke="#1A4A45" stroke-width="1.5"/>
+            <circle cx="16" cy="17" r="1.5" fill="#1A4A45"/>
+            <circle cx="20" cy="17" r="1.5" fill="#1A4A45"/>
+            <circle cx="24" cy="17" r="1.5" fill="#1A4A45"/>
+          </svg>
+          <p data-i18n="p3.copy">You study for months and then a native speaker says "wanna grab a bite?" and you freeze. Because you learned the formal written version of a living language. Real English moves fast — the book doesn't keep up.</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="p-card">
+          <div class="p-clip" aria-hidden="true">
+            <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+          </div>
+          <span class="p-stamp" data-i18n="p4.stamp">A PDF FROM 2011 IS NOT A LESSON.</span>
+          <svg class="p-icon" aria-hidden="true" width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <rect x="10" y="6" width="20" height="28" rx="2" stroke="#1A4A45" stroke-width="1.5"/>
+            <path d="M15 12H25M15 17H25M15 22H20" stroke="#1A4A45" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M17 28C17 28 18.5 26 20 26C21.5 26 23 28 23 28" stroke="#1A4A45" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="17.5" cy="24" r="0.9" fill="#1A4A45"/>
+            <circle cx="22.5" cy="24" r="0.9" fill="#1A4A45"/>
+          </svg>
+          <p data-i18n="p4.copy">No visuals. No context. No personality. Just a printed sheet with fill-in-the-blanks and clipart of a telephone. Learning is supposed to feel engaging — not like a chore you keep postponing.</p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="p-card">
+          <div class="p-clip" aria-hidden="true">
+            <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+          </div>
+          <span class="p-stamp" data-i18n="p5.stamp">WEEK 12 AND YOU'RE STILL STUCK.</span>
+          <svg class="p-icon" aria-hidden="true" width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="12" stroke="#1A4A45" stroke-width="1.5"/>
+            <path d="M20 12V20L25 23" stroke="#1A4A45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M29 7C31 9.5 32.5 14 32.5 14L28 13.5L29.5 9L29 7Z" fill="#1A4A45" opacity="0.3"/>
+          </svg>
+          <p data-i18n="p5.copy">Classes happen. Nothing connects. There's no thread, no visible growth, no sense of direction. You finish a lesson and couldn't tell someone what you actually learned.</p>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="p-card">
+          <div class="p-clip" aria-hidden="true">
+            <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+          </div>
+          <span class="p-stamp" data-i18n="p6.stamp">GENERIC ENGLISH FOR GENERIC PEOPLE.</span>
+          <svg class="p-icon" aria-hidden="true" width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="13" r="6" stroke="#1A4A45" stroke-width="1.5"/>
+            <path d="M10 34C10 28.477 14.477 24 20 24C25.523 24 30 28.477 30 34" stroke="#1A4A45" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M20 10L21 13L20 12L19 13Z" stroke="#1A4A45" stroke-width="0.8" fill="#1A4A45"/>
+          </svg>
+          <p data-i18n="p6.copy">The teacher doesn't know if you're into football, finance, or film. And it shows. The examples are irrelevant, the vocabulary is forgettable, and nothing sticks because nothing is yours.</p>
+        </div>
+
+      </div><!-- /problems-grid -->
+
+      <!-- TORN DIVIDER -->
+      <div class="torn-divider" aria-hidden="true"></div>
+
+      <!-- SOLUTION BLOCK -->
+      <div class="solution-block">
+        <div class="sticker" data-i18n="s1.sol.tag">THIS IS DIFFERENT</div>
+        <h2 data-i18n="s1.sol.h2">Here's where it changes.</h2>
+        <p class="s-sub" data-i18n="s1.sol.sub">5 years in the real world. Every class built from scratch. English you'll actually use.</p>
+
+        <div class="solution-notes">
+
+          <div class="s-note">
+            <svg class="s-note-star" aria-hidden="true" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <div>
+              <h3 data-i18n="n1.title">Real-world English, not classroom English.</h3>
+              <p data-i18n="n1.copy">Five years working for a US company means she's been in the meetings, written the emails, and sat in the video calls where everything happens in English. She knows what professional English actually sounds like — because she lived it, not just taught it.</p>
+            </div>
+          </div>
+
+          <div class="s-note">
+            <svg class="s-note-star" aria-hidden="true" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <div>
+              <h3 data-i18n="n2.title">Every class is built from scratch for you.</h3>
+              <p data-i18n="n2.copy">No recycled worksheets. No photocopied textbook pages passed off as a lesson plan. Every class starts with a custom presentation designed around your level, your goals, and what you're actually interested in. Football? Tech? Medicine? We go there.</p>
+            </div>
+          </div>
+
+          <div class="s-note">
+            <svg class="s-note-star" aria-hidden="true" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <div>
+              <h3 data-i18n="n3.title">The English that actually comes up.</h3>
+              <p data-i18n="n3.copy">Idioms, phrasal verbs, register shifts, current slang, the unwritten rules of how English sounds between native speakers. Not the formal, stiff version. The living version.</p>
+            </div>
+          </div>
+
+          <div class="s-note">
+            <svg class="s-note-star" aria-hidden="true" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <div>
+              <h3 data-i18n="n4.title">Two modes, one goal: you move forward.</h3>
+              <p data-i18n="n4.copy">Structured grammar-to-fluency progression or pure conversational practice — either way, you leave every class feeling like something actually happened. Not like you sat through something.</p>
+            </div>
+          </div>
+
+          <div class="s-note">
+            <svg class="s-note-star" aria-hidden="true" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <div>
+              <h3 data-i18n="n5.title">It's supposed to be fun.</h3>
+              <p data-i18n="n5.copy">No grades. No judgment on your accent. Classes feel like an engaging conversation with someone who happens to be a language expert — and who genuinely wants to see you get there.</p>
+            </div>
+          </div>
+
+        </div><!-- /solution-notes -->
+
+        <!-- Vintage car silhouette -->
+        <div class="car-wrap" aria-hidden="true">
+          <svg width="300" height="130" viewBox="0 0 300 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 88 L28 88 L38 55 L85 38 L140 34 L185 37 L215 54 L248 57 L268 62 L278 72 L283 88" stroke="#1A4A45" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="68" cy="88" r="24" stroke="#1A4A45" stroke-width="2.5" fill="none"/>
+            <circle cx="68" cy="88" r="11" stroke="#1A4A45" stroke-width="1.5" fill="none"/>
+            <circle cx="220" cy="88" r="24" stroke="#1A4A45" stroke-width="2.5" fill="none"/>
+            <circle cx="220" cy="88" r="11" stroke="#1A4A45" stroke-width="1.5" fill="none"/>
+            <path d="M88 55 L106 40 L165 36 L188 55" stroke="#1A4A45" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M96 53 L108 42 L138 40 L138 54" stroke="#1A4A45" stroke-width="1.5" fill="none"/>
+            <path d="M140 40 L165 38 L180 54 L140 54" stroke="#1A4A45" stroke-width="1.5" fill="none"/>
+            <line x1="140" y1="40" x2="140" y2="86" stroke="#1A4A45" stroke-width="1.5"/>
+            <circle cx="20" cy="80" r="5" stroke="#1A4A45" stroke-width="1.5" fill="none"/>
+            <path d="M8 88 L3 90 L3 83" stroke="#1A4A45" stroke-width="2" stroke-linecap="round"/>
+            <path d="M283 88 L290 90 L290 80" stroke="#1A4A45" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+      </div><!-- /solution-block -->
+
+    </div><!-- /main-card -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!--  SECTION 2 · PRICING                                   -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <section class="s-pricing">
+
+    <!-- Title card -->
+    <div class="pricing-title torn-b-2">
+      <div class="ptitle-clip" aria-hidden="true">
+        <svg width="28" height="40" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+      </div>
+      <div class="sticker" data-i18n="s2.tag">PICK YOUR PLAN</div>
+      <h2 data-i18n="s2.h2">Built around you. Not around a syllabus.</h2>
+      <p data-i18n="s2.sub">All plans include a free trial class. No commitment until you're sure.</p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="toggle-wrap">
+      <div class="p-toggle" role="group" aria-label="Pricing type">
+        <button class="t-btn active" id="t-ind" onclick="switchPrice('ind')" aria-pressed="true" data-i18n="toggle.ind">Individual</button>
+        <button class="t-btn" id="t-grp" onclick="switchPrice('grp')" aria-pressed="false" data-i18n="toggle.grp">Group (2–4)</button>
+      </div>
+      <p class="toggle-note" data-i18n="toggle.note">Enterprise pricing is fixed — no toggle needed.</p>
+    </div>
+
+    <!-- Pricing cards -->
+    <div class="pricing-grid">
+
+      <!-- CARD: CONVERSATION -->
+      <div class="pc pc--conv">
+        <div style="position:absolute;top:-14px;left:18px;" aria-hidden="true">
+          <svg width="26" height="36" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#E07B39" stroke="#C66A2E" stroke-width="0.5"/></svg>
+        </div>
+        <div class="compass-corner" aria-hidden="true">
+          <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="16" stroke="#2B5EA7" stroke-width="1.2"/>
+            <circle cx="20" cy="20" r="3" stroke="#2B5EA7" stroke-width="1"/>
+            <polygon points="20,6 22,17 20,16 18,17" fill="#2B5EA7"/>
+            <polygon points="20,34 22,23 20,24 18,23" fill="#2B5EA7" opacity="0.35"/>
+            <polygon points="6,20 17,18 16,20 17,22" fill="#2B5EA7" opacity="0.35"/>
+            <polygon points="34,20 23,18 24,20 23,22" fill="#2B5EA7" opacity="0.35"/>
+            <text x="20" y="9" text-anchor="middle" font-size="5" font-family="sans-serif" fill="#2B5EA7" font-weight="bold">N</text>
+          </svg>
+        </div>
+        <div class="sticker" data-i18n="c1.tag">CONVERSATION</div>
+        <div class="plan-name" data-i18n="c1.name">Conversation</div>
+        <div class="plan-tag" data-i18n="c1.tagline">"For people who already know English — they just need to start living in it."</div>
+        <p class="plan-desc" data-i18n="c1.desc">Weekly sessions built around real topics. No grammar drills — just fluency work. You talk, you get natural feedback in real time, and you stop overthinking every sentence.</p>
+        <ul class="plan-inc">
+          <li data-i18n="c1.i1">Weekly 60-min conversation session</li>
+          <li data-i18n="c1.i2">Topic chosen around your interests each week</li>
+          <li data-i18n="c1.i3">Vocabulary in context (not lists — real usage)</li>
+          <li data-i18n="c1.i4">Natural feedback on fluency, not just errors</li>
+          <li data-i18n="c1.i5">Curated content between classes (articles, podcasts, reels)</li>
+          <li data-i18n="c1.i6">WhatsApp access for quick questions</li>
+        </ul>
+        <p class="plan-best" data-i18n="c1.best">BEST FOR: B1–C1 students who freeze when they actually have to speak. Professionals who need English in calls and meetings.</p>
+        <div class="price-block">
+          <div class="price-ind">
+            <div class="price-main">$35 / class &nbsp;·&nbsp; $120 / month</div>
+            <div class="price-hand" data-i18n="c1.save">Save $20 with the monthly plan</div>
+          </div>
+          <div class="price-grp">
+            <div class="price-main">$20 / person / class &nbsp;·&nbsp; $70 / month</div>
+            <div class="price-small" data-i18n="c1.grp">Groups of 2–4. Schedule together, split the cost.</div>
+          </div>
+        </div>
+        <a href="#" class="cta cta-red" data-i18n="cta.trial">Book your free trial →</a>
+      </div>
+
+      <!-- CARD: FULL ENGLISH (FEATURED) -->
+      <div class="pc pc--full">
+        <div class="popular-badge" data-i18n="c2.popular">MOST POPULAR ★</div>
+        <svg class="star-tl" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        <svg class="star-tr" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="#D4A017"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        <div style="position:absolute;top:-20px;left:50%;transform:translateX(-50%);" aria-hidden="true">
+          <svg width="34" height="30" viewBox="0 0 44 40" fill="none">
+            <rect x="6" y="13" width="32" height="22" rx="2" fill="#888" stroke="#666" stroke-width="1"/>
+            <path d="M6 24 L0 9 L9 7 L13 24" fill="#999" stroke="#666" stroke-width="0.8"/>
+            <path d="M38 24 L44 9 L35 7 L31 24" fill="#999" stroke="#666" stroke-width="0.8"/>
+            <rect x="8" y="15" width="28" height="4" rx="1" fill="#aaa"/>
+          </svg>
+        </div>
+        <div class="sticker" data-i18n="c2.tag">FULL ENGLISH</div>
+        <div class="plan-name" data-i18n="c2.name">Full English</div>
+        <div class="plan-tag" data-i18n="c2.tagline">"Grammar, speaking, listening, writing — all of it, built around you."</div>
+        <p class="plan-desc" data-i18n="c2.desc">Structured, cohesive classes that cover all four skills. Each class is a custom-built presentation. Grammar explained with real examples, listening work, writing feedback, and speaking practice every session. There's a thread — every class connects to the next.</p>
+        <ul class="plan-inc">
+          <li data-i18n="c2.i1">Weekly 90-min structured class</li>
+          <li data-i18n="c2.i2">Custom-built presentation for every session</li>
+          <li data-i18n="c2.i3">Grammar + vocabulary + listening + speaking + writing</li>
+          <li data-i18n="c2.i4">Written feedback after every class</li>
+          <li data-i18n="c2.i5">Personal progress tracker updated monthly</li>
+          <li data-i18n="c2.i6">Homework tailored to your specific weak points</li>
+          <li data-i18n="c2.i7">WhatsApp access for follow-up questions during the week</li>
+        </ul>
+        <p class="plan-best" data-i18n="c2.best">BEST FOR: Students building from scratch or filling gaps. People preparing for IELTS, job interviews, or professional advancement.</p>
+        <div class="price-block">
+          <div class="price-ind">
+            <div class="price-main" style="color:var(--teal);">$45 / class &nbsp;·&nbsp; $160 / month</div>
+            <div class="price-hand" data-i18n="c2.save">Save $20 with the monthly plan</div>
+          </div>
+          <div class="price-grp">
+            <div class="price-main" style="color:var(--teal);">$28 / person / class &nbsp;·&nbsp; $95 / month</div>
+            <div class="price-small" data-i18n="c2.grp">All participants receive individual written feedback.</div>
+          </div>
+        </div>
+        <a href="#" class="cta cta-teal" data-i18n="cta.trial">Book your free trial →</a>
+      </div>
+
+      <!-- CARD: ENTERPRISE -->
+      <div class="pc pc--ent">
+        <div style="position:absolute;top:-14px;left:18px;" aria-hidden="true">
+          <svg width="26" height="36" viewBox="0 0 32 44" fill="none"><path d="M16 2C10.477 2 6 6.477 6 12V32C6 37.523 10.477 42 16 42C21.523 42 26 37.523 26 32V14H22V32C22 35.314 19.314 38 16 38C12.686 38 10 35.314 10 32V12C10 8.686 12.686 6 16 6C19.314 6 22 8.686 22 12V14H26V12C26 6.477 21.523 2 16 2Z" fill="#1B3A6B" stroke="#162E56" stroke-width="0.5"/></svg>
+        </div>
+        <div class="compass-corner" aria-hidden="true">
+          <svg width="34" height="34" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="16" stroke="#1B3A6B" stroke-width="1.2"/>
+            <circle cx="20" cy="20" r="3" stroke="#1B3A6B" stroke-width="1"/>
+            <polygon points="20,6 22,17 20,16 18,17" fill="#1B3A6B"/>
+            <polygon points="20,34 22,23 20,24 18,23" fill="#1B3A6B" opacity="0.35"/>
+            <polygon points="6,20 17,18 16,20 17,22" fill="#1B3A6B" opacity="0.35"/>
+            <polygon points="34,20 23,18 24,20 23,22" fill="#1B3A6B" opacity="0.35"/>
+            <text x="20" y="9" text-anchor="middle" font-size="5" font-family="sans-serif" fill="#1B3A6B" font-weight="bold">N</text>
+          </svg>
+        </div>
+        <div class="sticker" data-i18n="c3.tag">ENTERPRISE</div>
+        <div class="plan-name" style="color:var(--navy);" data-i18n="c3.name">Enterprise</div>
+        <div class="plan-tag" data-i18n="c3.tagline">"English for your team. Built around your industry."</div>
+        <p class="plan-desc" data-i18n="c3.desc">A fully custom English program for companies. Whether your team needs to communicate with international clients, prep for presentations, or write better emails — this is built from scratch around your business, your industry, and your people.</p>
+        <ul class="plan-inc">
+          <li data-i18n="c3.i1">Free initial needs assessment</li>
+          <li data-i18n="c3.i2">Fully custom curriculum by industry and team goals</li>
+          <li data-i18n="c3.i3">Group sessions with flexible scheduling</li>
+          <li data-i18n="c3.i4">Business English: emails, meetings, presentations, negotiations</li>
+          <li data-i18n="c3.i5">Individual progress reports per employee</li>
+          <li data-i18n="c3.i6">Dedicated WhatsApp channel for the team</li>
+          <li data-i18n="c3.i7">Monthly program review and adjustments</li>
+        </ul>
+        <p class="plan-best" data-i18n="c3.best">BEST FOR: Companies with international clients. Remote teams working in English. Employees preparing for promotions or cross-border roles.</p>
+        <div class="price-block">
+          <div class="price-main" style="color:var(--navy);" data-i18n="c3.price">Custom quote</div>
+          <div class="price-small" data-i18n="c3.pricesub">Based on team size and session frequency.</div>
+          <div class="price-xs" data-i18n="c3.pricexs">Starting from a flat monthly rate · Response within 24 hours</div>
+        </div>
+        <a href="#" class="cta cta-outline" data-i18n="cta.quote">Get a free quote →</a>
+        <p class="nc-note" data-i18n="c3.nc">No commitment. Just a conversation.</p>
+      </div>
+
+    </div><!-- /pricing-grid -->
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip" role="list">
+      <div class="t-tag" role="listitem" data-i18n="tr.1">Free trial class · no strings attached</div>
+      <div class="t-tag" role="listitem" data-i18n="tr.2">Cancel or pause anytime</div>
+      <div class="t-tag" role="listitem" data-i18n="tr.3">Custom class plan from day one</div>
+      <div class="t-tag" role="listitem" data-i18n="tr.4">Online via Google Meet or Zoom</div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-card">
+      <svg class="faq-star-pin" aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="#D4A017">
+        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+      </svg>
+      <div class="sticker" data-i18n="faq.tag">GOT QUESTIONS?</div>
+      <h3 data-i18n="faq.h3">Answers.</h3>
+
+      <div class="faq-item" id="f1">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa1" onclick="toggleFaq('f1')">
+          <span data-i18n="faq.q1">Do I need a certain level to start?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-ans" id="fa1" role="region">
+          <div class="faq-ans-inner" data-i18n="faq.a1">No. There's a plan for every level — complete beginner to near-native. The free trial class is designed to understand exactly where you are and what you need before anything else.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="f2">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa2" onclick="toggleFaq('f2')">
+          <span data-i18n="faq.q2">Are classes online or in person?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-ans" id="fa2" role="region">
+          <div class="faq-ans-inner" data-i18n="faq.a2">All online via Google Meet or Zoom. That means you can join from Buenos Aires, Madrid, or wherever you are. All you need is a decent internet connection and somewhere comfortable to sit.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="f3">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa3" onclick="toggleFaq('f3')">
+          <span data-i18n="faq.q3">How long are the classes?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-ans" id="fa3" role="region">
+          <div class="faq-ans-inner" data-i18n="faq.a3">Conversation classes are 60 minutes. Full English classes are 90 minutes. Enterprise sessions are flexible depending on your team's needs and schedule.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="f4">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa4" onclick="toggleFaq('f4')">
+          <span data-i18n="faq.q4">What's the difference between Conversation and Full English?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-ans" id="fa4" role="region">
+          <div class="faq-ans-inner" data-i18n="faq.a4">Conversation is for students who already have a foundation and want to develop real fluency through discussion and practice. Full English is a structured program that covers grammar, vocabulary, listening, speaking, and writing in a cohesive week-by-week progression.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" id="f5">
+        <button class="faq-q" aria-expanded="false" aria-controls="fa5" onclick="toggleFaq('f5')">
+          <span data-i18n="faq.q5">Can I switch plans?</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-ans" id="fa5" role="region">
+          <div class="faq-ans-inner" data-i18n="faq.a5">Anytime. If you start with Conversation and decide you want more structure, or vice versa, you just let me know and we adjust. No penalties, no friction.</div>
+        </div>
+      </div>
+
+    </div><!-- /faq-card -->
+
+  </section>
+
+  <script>
+    /* ── TRANSLATIONS ── */
+    const T = {
+      en: {
+        /* Section 1 */
+        "s1.tag": "THE REAL TALK",
+        "s1.h1": "Most English classes are stuck in 2003.",
+        "s1.sub": "You've probably been there. Let's name it.",
+        "s1.sol.tag": "THIS IS DIFFERENT",
+        "s1.sol.h2": "Here's where it changes.",
+        "s1.sol.sub": "5 years in the real world. Every class built from scratch. English you'll actually use.",
+        /* Problem cards */
+        "p1.stamp": "PAGE 47, EXERCISE 3. AGAIN.",
+        "p1.copy": "Your teacher opens the student book, reads the dialogue out loud, asks you to repeat it, and calls it a lesson. You've memorized that Janet and Tom are going to the supermarket — but you still freeze when trying to order coffee in real life.",
+        "p2.stamp": "TAILORED TO NO ONE.",
+        "p2.copy": "Same worksheet for every student. Whether you're 22 and studying medicine or 38 and prepping for a job interview, you get the exact same material. Nobody asks what you actually need.",
+        "p3.stamp": "NOBODY TALKS LIKE THAT.",
+        "p3.copy": "You study for months and then a native speaker says \"wanna grab a bite?\" and you freeze. Because you learned the formal written version of a living language. Real English moves fast — the book doesn't keep up.",
+        "p4.stamp": "A PDF FROM 2011 IS NOT A LESSON.",
+        "p4.copy": "No visuals. No context. No personality. Just a printed sheet with fill-in-the-blanks and clipart of a telephone. Learning is supposed to feel engaging — not like a chore you keep postponing.",
+        "p5.stamp": "WEEK 12 AND YOU'RE STILL STUCK.",
+        "p5.copy": "Classes happen. Nothing connects. There's no thread, no visible growth, no sense of direction. You finish a lesson and couldn't tell someone what you actually learned.",
+        "p6.stamp": "GENERIC ENGLISH FOR GENERIC PEOPLE.",
+        "p6.copy": "The teacher doesn't know if you're into football, finance, or film. And it shows. The examples are irrelevant, the vocabulary is forgettable, and nothing sticks because nothing is yours.",
+        /* Solution notes */
+        "n1.title": "Real-world English, not classroom English.",
+        "n1.copy": "Five years working for a US company means she's been in the meetings, written the emails, and sat in the video calls where everything happens in English. She knows what professional English actually sounds like — because she lived it, not just taught it.",
+        "n2.title": "Every class is built from scratch for you.",
+        "n2.copy": "No recycled worksheets. No photocopied textbook pages passed off as a lesson plan. Every class starts with a custom presentation designed around your level, your goals, and what you're actually interested in. Football? Tech? Medicine? We go there.",
+        "n3.title": "The English that actually comes up.",
+        "n3.copy": "Idioms, phrasal verbs, register shifts, current slang, the unwritten rules of how English sounds between native speakers. Not the formal, stiff version. The living version.",
+        "n4.title": "Two modes, one goal: you move forward.",
+        "n4.copy": "Structured grammar-to-fluency progression or pure conversational practice — either way, you leave every class feeling like something actually happened. Not like you sat through something.",
+        "n5.title": "It's supposed to be fun.",
+        "n5.copy": "No grades. No judgment on your accent. Classes feel like an engaging conversation with someone who happens to be a language expert — and who genuinely wants to see you get there.",
+        /* Section 2 */
+        "s2.tag": "PICK YOUR PLAN",
+        "s2.h2": "Built around you. Not around a syllabus.",
+        "s2.sub": "All plans include a free trial class. No commitment until you're sure.",
+        "toggle.ind": "Individual",
+        "toggle.grp": "Group (2–4)",
+        "toggle.note": "Enterprise pricing is fixed — no toggle needed.",
+        /* Cards */
+        "c1.tag": "CONVERSATION", "c1.name": "Conversation",
+        "c1.tagline": "\"For people who already know English — they just need to start living in it.\"",
+        "c1.desc": "Weekly sessions built around real topics. No grammar drills — just fluency work. You talk, you get natural feedback in real time, and you stop overthinking every sentence.",
+        "c1.i1": "Weekly 60-min conversation session", "c1.i2": "Topic chosen around your interests each week",
+        "c1.i3": "Vocabulary in context (not lists — real usage)", "c1.i4": "Natural feedback on fluency, not just errors",
+        "c1.i5": "Curated content between classes (articles, podcasts, reels)", "c1.i6": "WhatsApp access for quick questions",
+        "c1.best": "BEST FOR: B1–C1 students who freeze when they actually have to speak. Professionals who need English in calls and meetings.",
+        "c1.save": "Save $20 with the monthly plan", "c1.grp": "Groups of 2–4. Schedule together, split the cost.",
+        "c2.popular": "MOST POPULAR ★", "c2.tag": "FULL ENGLISH", "c2.name": "Full English",
+        "c2.tagline": "\"Grammar, speaking, listening, writing — all of it, built around you.\"",
+        "c2.desc": "Structured, cohesive classes that cover all four skills. Each class is a custom-built presentation. Grammar explained with real examples, listening work, writing feedback, and speaking practice every session. There's a thread — every class connects to the next.",
+        "c2.i1": "Weekly 90-min structured class", "c2.i2": "Custom-built presentation for every session",
+        "c2.i3": "Grammar + vocabulary + listening + speaking + writing", "c2.i4": "Written feedback after every class",
+        "c2.i5": "Personal progress tracker updated monthly", "c2.i6": "Homework tailored to your specific weak points",
+        "c2.i7": "WhatsApp access for follow-up questions during the week",
+        "c2.best": "BEST FOR: Students building from scratch or filling gaps. People preparing for IELTS, job interviews, or professional advancement.",
+        "c2.save": "Save $20 with the monthly plan", "c2.grp": "All participants receive individual written feedback.",
+        "c3.tag": "ENTERPRISE", "c3.name": "Enterprise",
+        "c3.tagline": "\"English for your team. Built around your industry.\"",
+        "c3.desc": "A fully custom English program for companies. Whether your team needs to communicate with international clients, prep for presentations, or write better emails — this is built from scratch around your business, your industry, and your people.",
+        "c3.i1": "Free initial needs assessment", "c3.i2": "Fully custom curriculum by industry and team goals",
+        "c3.i3": "Group sessions with flexible scheduling", "c3.i4": "Business English: emails, meetings, presentations, negotiations",
+        "c3.i5": "Individual progress reports per employee", "c3.i6": "Dedicated WhatsApp channel for the team",
+        "c3.i7": "Monthly program review and adjustments",
+        "c3.best": "BEST FOR: Companies with international clients. Remote teams working in English. Employees preparing for promotions or cross-border roles.",
+        "c3.price": "Custom quote", "c3.pricesub": "Based on team size and session frequency.",
+        "c3.pricexs": "Starting from a flat monthly rate · Response within 24 hours",
+        "c3.nc": "No commitment. Just a conversation.",
+        /* CTA */
+        "cta.trial": "Book your free trial →", "cta.quote": "Get a free quote →",
+        /* Trust */
+        "tr.1": "Free trial class · no strings attached", "tr.2": "Cancel or pause anytime",
+        "tr.3": "Custom class plan from day one", "tr.4": "Online via Google Meet or Zoom",
+        /* FAQ */
+        "faq.tag": "GOT QUESTIONS?", "faq.h3": "Answers.",
+        "faq.q1": "Do I need a certain level to start?",
+        "faq.a1": "No. There's a plan for every level — complete beginner to near-native. The free trial class is designed to understand exactly where you are and what you need before anything else.",
+        "faq.q2": "Are classes online or in person?",
+        "faq.a2": "All online via Google Meet or Zoom. That means you can join from Buenos Aires, Madrid, or wherever you are. All you need is a decent internet connection and somewhere comfortable to sit.",
+        "faq.q3": "How long are the classes?",
+        "faq.a3": "Conversation classes are 60 minutes. Full English classes are 90 minutes. Enterprise sessions are flexible depending on your team's needs and schedule.",
+        "faq.q4": "What's the difference between Conversation and Full English?",
+        "faq.a4": "Conversation is for students who already have a foundation and want to develop real fluency through discussion and practice. Full English is a structured program that covers grammar, vocabulary, listening, speaking, and writing in a cohesive week-by-week progression.",
+        "faq.q5": "Can I switch plans?",
+        "faq.a5": "Anytime. If you start with Conversation and decide you want more structure, or vice versa, you just let me know and we adjust. No penalties, no friction.",
+      },
+      es: {
+        /* Sección 1 */
+        "s1.tag": "LA VERDAD",
+        "s1.h1": "La mayoría de las clases de inglés están varadas en 2003.",
+        "s1.sub": "Probablemente lo viviste. Nombremos el problema.",
+        "s1.sol.tag": "ESTO ES DIFERENTE",
+        "s1.sol.h2": "Acá es donde todo cambia.",
+        "s1.sol.sub": "5 años en el mundo real. Cada clase construida desde cero. El inglés que vas a usar de verdad.",
+        /* Problemas */
+        "p1.stamp": "PÁGINA 47, EJERCICIO 3. DE NUEVO.",
+        "p1.copy": "Tu profe abre el libro, lee el diálogo en voz alta, te pide que repitas y lo llama clase. Ya memorizaste que Janet y Tom van al supermercado — pero seguís bloqueado cuando intentás pedir un café en la vida real.",
+        "p2.stamp": "PENSADO PARA NADIE EN PARTICULAR.",
+        "p2.copy": "La misma hoja de trabajo para todos. Tenés 22 y estudiás medicina o 38 y te preparás para una entrevista de trabajo, y recibís exactamente lo mismo. Nadie pregunta qué necesitás.",
+        "p3.stamp": "NADIE HABLA ASÍ.",
+        "p3.copy": "Estudiás meses y cuando un angloparlante dice \"wanna grab a bite?\" te quedás en blanco. Porque aprendiste la versión formal y escrita de un idioma vivo. El inglés real va rápido — el libro no alcanza.",
+        "p4.stamp": "UN PDF DE 2011 NO ES UNA CLASE.",
+        "p4.copy": "Sin imágenes. Sin contexto. Sin personalidad. Solo una hoja impresa con espacios para completar y clipart de un teléfono. Aprender tiene que ser interesante — no una tarea que seguís postergando.",
+        "p5.stamp": "SEMANA 12 Y SEGUÍS IGUAL.",
+        "p5.copy": "Las clases pasan. Nada conecta. No hay hilo, no hay progreso visible, no hay dirección. Terminás la clase y no podrías contarle a nadie qué aprendiste.",
+        "p6.stamp": "INGLÉS GENÉRICO PARA PERSONAS GENÉRICAS.",
+        "p6.copy": "El profe no sabe si te gusta el fútbol, las finanzas o el cine. Y se nota. Los ejemplos no tienen nada que ver, el vocabulario no se queda, y nada pega porque nada es tuyo.",
+        /* Notas de solución */
+        "n1.title": "Inglés del mundo real, no del aula.",
+        "n1.copy": "Cinco años trabajando para una empresa estadounidense significan haber estado en las reuniones, escrito los mails y participado en las videollamadas donde todo pasa en inglés. Sabe lo que suena el inglés profesional de verdad — porque lo vivió, no solo lo enseñó.",
+        "n2.title": "Cada clase está construida desde cero para vos.",
+        "n2.copy": "Sin hojas recicladas. Sin páginas fotocopiadas del libro haciéndose pasar por una clase. Cada clase empieza con una presentación personalizada según tu nivel, tus objetivos y lo que te interesa. ¿Fútbol? ¿Tecnología? ¿Medicina? Llegamos ahí.",
+        "n3.title": "El inglés que aparece de verdad.",
+        "n3.copy": "Modismos, phrasal verbs, cambios de registro, slang actual, las reglas no escritas de cómo suena el inglés entre hablantes nativos. No la versión formal y rígida. La versión viva.",
+        "n4.title": "Dos modos, un objetivo: avanzás.",
+        "n4.copy": "Progresión estructurada de gramática a fluidez o práctica conversacional pura — de cualquier manera, salís de cada clase sintiendo que algo realmente pasó. No que te sentaste a esperar que termine.",
+        "n5.title": "Se supone que tiene que ser divertido.",
+        "n5.copy": "Sin notas. Sin juicios sobre tu acento. Las clases se sienten como una conversación interesante con alguien que resulta ser experto en el idioma — y que genuinamente quiere que llegues.",
+        /* Sección 2 */
+        "s2.tag": "ELEGÍ TU PLAN",
+        "s2.h2": "Construido para vos. No para un programa.",
+        "s2.sub": "Todos los planes incluyen una clase de prueba gratis. Sin compromiso hasta que estés seguro.",
+        "toggle.ind": "Individual",
+        "toggle.grp": "Grupo (2–4)",
+        "toggle.note": "El precio Enterprise es fijo — no necesita toggle.",
+        /* Tarjetas */
+        "c1.tag": "CONVERSACIÓN", "c1.name": "Conversación",
+        "c1.tagline": "\"Para gente que ya sabe inglés — solo necesita empezar a vivirlo.\"",
+        "c1.desc": "Sesiones semanales alrededor de temas reales. Sin ejercicios de gramática — solo trabajo de fluidez. Hablás, recibís feedback natural en tiempo real y dejás de pensar de más cada oración.",
+        "c1.i1": "Sesión semanal de conversación de 60 min", "c1.i2": "Tema elegido según tus intereses cada semana",
+        "c1.i3": "Vocabulario en contexto (no listas — uso real)", "c1.i4": "Feedback natural sobre fluidez, no solo errores",
+        "c1.i5": "Contenido curado entre clases (artículos, podcasts, reels)", "c1.i6": "Acceso por WhatsApp para preguntas rápidas",
+        "c1.best": "IDEAL PARA: Estudiantes B1–C1 que se bloquean cuando tienen que hablar. Profesionales que necesitan inglés en llamadas y reuniones.",
+        "c1.save": "Ahorrás $20 con el plan mensual", "c1.grp": "Grupos de 2–4. Coordinan horario y dividen el costo.",
+        "c2.popular": "MÁS POPULAR ★", "c2.tag": "FULL ENGLISH", "c2.name": "Full English",
+        "c2.tagline": "\"Gramática, speaking, listening, writing — todo, construido para vos.\"",
+        "c2.desc": "Clases estructuradas y cohesivas que cubren las cuatro habilidades. Cada clase es una presentación hecha a medida. Gramática explicada con ejemplos reales, trabajo de listening, feedback de escritura y práctica oral en cada sesión. Hay un hilo — cada clase conecta con la siguiente.",
+        "c2.i1": "Clase estructurada semanal de 90 min", "c2.i2": "Presentación hecha a medida para cada sesión",
+        "c2.i3": "Gramática + vocabulario + listening + speaking + writing", "c2.i4": "Feedback escrito después de cada clase",
+        "c2.i5": "Seguimiento de progreso personal actualizado mensualmente", "c2.i6": "Tarea adaptada a tus puntos débiles específicos",
+        "c2.i7": "Acceso por WhatsApp para preguntas durante la semana",
+        "c2.best": "IDEAL PARA: Estudiantes que construyen desde cero o llenan huecos. Gente que se prepara para el IELTS, entrevistas de trabajo o avance profesional.",
+        "c2.save": "Ahorrás $20 con el plan mensual", "c2.grp": "Todos los participantes reciben feedback escrito individual.",
+        "c3.tag": "EMPRESAS", "c3.name": "Empresas",
+        "c3.tagline": "\"Inglés para tu equipo. Construido alrededor de tu industria.\"",
+        "c3.desc": "Un programa de inglés completamente personalizado para empresas. Ya sea que tu equipo necesite comunicarse con clientes internacionales, prepararse para presentaciones o escribir mejores mails — esto se construye desde cero alrededor de tu empresa, tu industria y tu gente.",
+        "c3.i1": "Diagnóstico inicial de necesidades sin costo", "c3.i2": "Currícula personalizada por industria y objetivos del equipo",
+        "c3.i3": "Sesiones grupales con horarios flexibles", "c3.i4": "Business English: mails, reuniones, presentaciones, negociaciones",
+        "c3.i5": "Informes de progreso individuales por empleado", "c3.i6": "Canal de WhatsApp dedicado para el equipo",
+        "c3.i7": "Revisión mensual del programa y ajustes",
+        "c3.best": "IDEAL PARA: Empresas con clientes internacionales. Equipos remotos que trabajan en inglés. Empleados que se preparan para ascensos o roles transfronterizos.",
+        "c3.price": "Cotización personalizada", "c3.pricesub": "Según tamaño del equipo y frecuencia de sesiones.",
+        "c3.pricexs": "Desde una tarifa mensual fija · Respuesta en menos de 24 horas",
+        "c3.nc": "Sin compromiso. Solo una conversación.",
+        /* CTA */
+        "cta.trial": "Reservá tu clase de prueba →", "cta.quote": "Pedí una cotización gratis →",
+        /* Confianza */
+        "tr.1": "Clase de prueba gratis · sin ataduras", "tr.2": "Cancelá o pausá en cualquier momento",
+        "tr.3": "Plan de clases personalizado desde el día uno", "tr.4": "Online por Google Meet o Zoom",
+        /* FAQ */
+        "faq.tag": "¿TENÉS PREGUNTAS?", "faq.h3": "Respuestas.",
+        "faq.q1": "¿Necesito tener un nivel determinado para empezar?",
+        "faq.a1": "No. Hay un plan para cada nivel — desde principiante completo hasta casi nativo. La clase de prueba está pensada para entender exactamente dónde estás y qué necesitás antes de cualquier otra cosa.",
+        "faq.q2": "¿Las clases son online o presenciales?",
+        "faq.a2": "Todas online por Google Meet o Zoom. Eso significa que podés conectarte desde Buenos Aires, Madrid o donde estés. Solo necesitás una conexión decente a internet y un lugar cómodo donde sentarte.",
+        "faq.q3": "¿Cuánto duran las clases?",
+        "faq.a3": "Las clases de Conversación duran 60 minutos. Las de Full English duran 90 minutos. Las sesiones Enterprise son flexibles según las necesidades y el horario de tu equipo.",
+        "faq.q4": "¿Cuál es la diferencia entre Conversación y Full English?",
+        "faq.a4": "Conversación es para estudiantes que ya tienen una base y quieren desarrollar fluidez real a través de la práctica y el debate. Full English es un programa estructurado que cubre gramática, vocabulario, listening, speaking y writing en una progresión semana a semana.",
+        "faq.q5": "¿Puedo cambiar de plan?",
+        "faq.a5": "Cuando quieras. Si empezás con Conversación y decidís que querés más estructura, o al revés, me avisás y ajustamos. Sin penalidades, sin complicaciones.",
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      const dict = T[lang];
+
+      /* Update all data-i18n elements */
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.textContent = dict[key];
+      });
+
+      /* Toggle buttons */
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-en').setAttribute('aria-pressed', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-es').setAttribute('aria-pressed', lang === 'es');
+
+      /* html lang attribute for SEO */
+      document.documentElement.lang = lang === 'es' ? 'es-AR' : 'en';
+
+      /* Also update the pricing toggle text (it has its own buttons) */
+      document.getElementById('t-ind').textContent = dict['toggle.ind'];
+      document.getElementById('t-grp').textContent = dict['toggle.grp'];
+    }
+
+    /* ── PRICING TOGGLE ── */
+    function switchPrice(mode) {
+      const isInd = mode === 'ind';
+      document.getElementById('t-ind').classList.toggle('active', isInd);
+      document.getElementById('t-ind').setAttribute('aria-pressed', isInd);
+      document.getElementById('t-grp').classList.toggle('active', !isInd);
+      document.getElementById('t-grp').setAttribute('aria-pressed', !isInd);
+
+      document.querySelectorAll('.price-ind').forEach(el => el.style.display = isInd ? 'block' : 'none');
+      document.querySelectorAll('.price-grp').forEach(el => el.style.display = isInd ? 'none' : 'block');
+    }
+
+    /* ── FAQ ACCORDION ── */
+    function toggleFaq(id) {
+      const item = document.getElementById(id);
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        item.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    /* Boot: default to English */
+    setLang('en');
+  </script>
+
+</body>
+</html>
