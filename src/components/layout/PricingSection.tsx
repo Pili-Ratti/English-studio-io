@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import BorderGlow from "@/components/ui/BorderGlow";
 
 type PriceMode = "individual" | "group";
 
@@ -78,6 +79,18 @@ interface PlanData {
 
 type PlanMetaItem = typeof planMeta[number];
 
+const glowColors: Record<string, string[]> = {
+  "conversation": ["#9ca3af", "#d1d5db", "#6b7280"],
+  "full-english":  ["#22C55E", "#4ADE80", "#16A34A"],
+  "enterprise":    ["#6b7280", "#4b5563", "#9ca3af"],
+};
+
+const glowColorStr: Record<string, string> = {
+  "conversation": "220 10 60",
+  "full-english":  "142 71 45",
+  "enterprise":    "220 9 46",
+};
+
 function PlanCard({
   plan,
   meta,
@@ -94,10 +107,17 @@ function PlanCard({
   const isEnterprise = meta.id === "enterprise";
 
   return (
-    <div className={`relative bg-white rounded-2xl p-8 border shadow-sm hover:shadow-lg transition-all duration-200 ${
-      meta.featured ? "border-green-400" : "border-gray-200"
-    }`}>
+    <BorderGlow
+      backgroundColor="#ffffff"
+      borderRadius={16}
+      colors={glowColors[meta.id]}
+      glowColor={glowColorStr[meta.id]}
+      glowIntensity={meta.featured ? 1.0 : 0.7}
+      fillOpacity={meta.featured ? 0.25 : 0.15}
+      className={`relative hover:-translate-y-1 transition-transform duration-200 ${meta.featured ? "ring-2 ring-green-400 ring-offset-2" : ""}`}
+    >
 
+      <div className="p-8">
       {/* Popular badge */}
       {meta.featured && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[12px] font-extrabold tracking-[0.06em] uppercase px-5 py-1.5 rounded-full whitespace-nowrap">
@@ -176,7 +196,8 @@ function PlanCard({
       {isEnterprise && (
         <p className="text-[13px] text-gray-400 text-center mt-2.5">{noCommit}</p>
       )}
-    </div>
+      </div>
+    </BorderGlow>
   );
 }
 
