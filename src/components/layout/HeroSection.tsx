@@ -1,74 +1,69 @@
 "use client";
-
-const marqueeItems = [
-  { text: "Free trial class · no strings attached", dot: "bg-green-400" },
-  { text: "100% customized to you", dot: "bg-pink-400" },
-  { text: "Cancel anytime", dot: "bg-purple-400" },
-  { text: "5 years of real-world business English", dot: "bg-green-400" },
-  { text: "Online via Zoom or Google Meet", dot: "bg-pink-400" },
-  { text: "No student books. No PDFs from 2011.", dot: "bg-purple-400" },
-  { text: "Classes built around your interests", dot: "bg-green-400" },
-];
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 export function HeroSection() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+  const h = t.hero;
+
   return (
     <>
       {/* ── HERO ── */}
-      <section id="hero" className="bg-white pt-20 pb-16 px-6 relative overflow-hidden">
+      <section id="hero" className="bg-white pt-20 pb-20 px-6 relative overflow-hidden">
         <div
-          className="absolute -top-32 -right-32 w-[480px] h-[480px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(168,85,247,0.10) 0%, transparent 70%)" }}
+          className="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(34,197,94,0.08) 0%, transparent 70%)" }}
         />
         <div
-          className="absolute -bottom-20 -left-20 w-[360px] h-[360px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(74,222,128,0.12) 0%, transparent 70%)" }}
+          className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(34,197,94,0.06) 0%, transparent 70%)" }}
         />
 
         <div className="max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* ── Left: text ── */}
           <div className="relative z-10">
-            <span className="inline-block text-[14px] font-bold text-green-700 bg-green-100 px-4 py-1.5 rounded-full mb-6">
-              Free first class — always
+            <span className="inline-block text-[13px] font-bold text-green-700 bg-green-50 border border-green-200 px-4 py-1.5 rounded-full mb-6">
+              {h.badge}
             </span>
 
-            <h1 className="font-display font-black italic leading-[1.05] text-gray-900 mb-5"
-              style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
-              The English class that actually{" "}
+            <h1 className="font-display font-bold italic leading-[1.08] text-gray-900 mb-5"
+              style={{ fontSize: "clamp(40px, 6vw, 68px)" }}>
+              {h.h1a}{" "}
               <em
                 style={{
-                  background: "linear-gradient(135deg, #7C3AED, #DB2777)",
+                  background: "linear-gradient(135deg, #16A34A, #15803D)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
+                  fontStyle: "italic",
                 }}
               >
-                works.
+                {h.h1b}
               </em>
             </h1>
 
             <p className="text-[18px] text-gray-500 max-w-[480px] mb-8 leading-[1.7]">
-              Personalized classes built around your life, your interests, and the English you&apos;ll actually use — not a student book from 2003.
+              {h.sub}
             </p>
 
             <div className="flex gap-3 flex-wrap mb-8">
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center font-bold text-[16px] bg-green-400 text-gray-900 border-2 border-green-600 border-b-[5px] px-7 py-3.5 rounded-[10px] shadow-[0_2px_0_#16A34A] hover:-translate-y-px hover:shadow-[0_4px_0_#16A34A] active:translate-y-0.5 active:border-b-2 active:shadow-none transition-all duration-100 no-underline"
+                className="inline-flex items-center justify-center font-bold text-[16px] bg-green-500 text-white px-8 py-3.5 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline"
               >
-                Book your free class →
+                {h.cta1}
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center font-bold text-[16px] text-gray-900 border-2 border-gray-200 px-7 py-3.5 rounded-[10px] hover:border-gray-900 transition-colors duration-150 no-underline"
+                className="inline-flex items-center justify-center font-bold text-[16px] text-gray-700 border border-gray-300 px-8 py-3.5 rounded-full hover:border-gray-500 hover:text-gray-900 transition-colors duration-150 no-underline"
               >
-                See the plans
+                {h.cta2}
               </a>
             </div>
 
-            <p className="text-[14px] font-bold text-gray-500">
-              5 years of real-world business English · Online via Zoom or Google Meet
-            </p>
+            <p className="text-[14px] font-semibold text-gray-400">{h.proof}</p>
           </div>
 
           {/* ── Right: chat mockup ── */}
@@ -76,15 +71,15 @@ export function HeroSection() {
             {/* Floating context pills — desktop only */}
             <div className="hidden md:flex absolute -top-4 right-5 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float">
               <PencilIcon className="text-green-600 w-3.5 h-3.5" />
-              Custom to you
+              {h.floating.custom}
             </div>
             <div className="hidden md:flex absolute bottom-10 -left-5 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float-2">
-              <ChatIcon className="text-purple-600 w-3.5 h-3.5" />
-              Real conversation
+              <ChatIcon className="text-green-600 w-3.5 h-3.5" />
+              {h.floating.conversation}
             </div>
             <div className="hidden md:flex absolute top-1/2 -right-6 -translate-y-1/2 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float-3">
-              <GiftIcon className="text-pink-600 w-3.5 h-3.5" />
-              Free trial
+              <GiftIcon className="text-green-600 w-3.5 h-3.5" />
+              {h.floating.trial}
             </div>
 
             {/* Chat window */}
@@ -92,34 +87,34 @@ export function HeroSection() {
               <div className="flex items-center gap-3 pb-4 mb-4 border-b border-gray-200">
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-[14px] font-bold"
-                  style={{ background: "linear-gradient(135deg, #22C55E, #7C3AED)" }}
+                  style={{ background: "linear-gradient(135deg, #22C55E, #16A34A)" }}
                 >
                   P
                 </div>
                 <div>
-                  <div className="text-[14px] font-extrabold text-gray-900">The Fluency House</div>
+                  <div className="text-[14px] font-extrabold text-gray-900">{h.chat.name}</div>
                   <div className="text-[12px] font-bold text-green-600 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-400 inline-block animate-pulse-dot" />
-                    Class in session
+                    {h.chat.status}
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col gap-2.5">
                 <div className="bg-gray-900 text-white text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
-                  So — what do you usually watch on Netflix?
+                  {h.chat.b1}
                 </div>
                 <div className="bg-green-100 text-green-800 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-bl-sm max-w-[85%] self-end">
-                  Thrillers! I like crime shows.
+                  {h.chat.b2}
                 </div>
                 <div className="bg-white border border-gray-200 text-gray-700 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
-                  Perfect. Let&apos;s talk about <strong>&ldquo;whodunit&rdquo;</strong> — do you know this word?
+                  {h.chat.b3a}<strong>&ldquo;whodunit&rdquo;</strong>{h.chat.b3b}
                 </div>
                 <div className="bg-green-100 text-green-800 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-bl-sm max-w-[85%] self-end">
-                  No! What does it mean?
+                  {h.chat.b4}
                 </div>
                 <div className="bg-gray-900 text-white text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
-                  Slang for a mystery story — &ldquo;who done it?&rdquo; Real everyday English.
+                  {h.chat.b5}
                 </div>
                 <div className="flex items-center gap-1 px-3.5 py-2.5 bg-gray-100 rounded-2xl w-fit self-start">
                   <div className="w-[7px] h-[7px] rounded-full bg-gray-400 animate-typing-1" />
@@ -136,10 +131,10 @@ export function HeroSection() {
       {/* ── MARQUEE ── */}
       <div className="bg-gray-900 overflow-hidden py-3.5" aria-hidden="true">
         <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
-          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+          {[...t.marquee, ...t.marquee].map((item, i) => (
             <div key={i} className="flex items-center gap-2.5 px-7 text-[14px] font-bold text-white/80 whitespace-nowrap">
-              <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${item.dot}`} />
-              {item.text}
+              <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${marqueeDots[i % 3]}`} />
+              {item}
             </div>
           ))}
         </div>
@@ -147,6 +142,8 @@ export function HeroSection() {
     </>
   );
 }
+
+const marqueeDots = ["bg-green-400", "bg-green-300", "bg-green-500"];
 
 function PencilIcon({ className }: { className?: string }) {
   return (

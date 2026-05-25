@@ -10,18 +10,11 @@ export function ProblemSection() {
 
   return (
     <>
-      {/* ── WAVE: white → purple-50 ── */}
-      <div style={{ background: "#fff" }} aria-hidden="true">
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60" width="100%">
-          <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FAF5FF" />
-        </svg>
-      </div>
-
       {/* ── PROBLEMS ── */}
-      <section id="how-it-works" className="bg-[#FAF5FF] py-24 px-6">
+      <section id="how-it-works" className="bg-gray-50 py-24 px-6">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
+            <h2 className="font-display font-bold italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
               {p.h2}
             </h2>
             <p className="text-[18px] text-gray-500 max-w-[560px] mx-auto">{p.sub}</p>
@@ -31,37 +24,30 @@ export function ProblemSection() {
             {p.cards.map((card, i) => {
               const PIcon = ProblemIcons[i];
               return (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
-              >
-                <div className="w-14 h-14 rounded-[10px] bg-green-100 text-green-700 flex items-center justify-center mb-4">
-                  <PIcon className="w-6 h-6" />
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
+                >
+                  <div className="w-12 h-12 rounded-full bg-green-50 border border-green-100 text-green-600 flex items-center justify-center mb-4">
+                    <PIcon className="w-5 h-5" />
+                  </div>
+                  <span className="block text-[11px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-2">
+                    {card.label}
+                  </span>
+                  <h3 className="text-[17px] font-bold text-gray-900 mb-2">{card.title}</h3>
+                  <p className="text-[14px] text-gray-500 leading-[1.65]">{card.copy}</p>
                 </div>
-                <span className="block text-[11px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-2">
-                  {card.label}
-                </span>
-                <h3 className="text-[17px] font-bold text-gray-900 mb-2">{card.title}</h3>
-                <p className="text-[14px] text-gray-500 leading-[1.65]">{card.copy}</p>
-              </div>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* ── WAVE: purple-50 → white ── */}
-      <div style={{ background: "#FAF5FF" }} aria-hidden="true">
-        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" height="60" width="100%">
-          <path d="M0,20 C360,60 720,0 1080,40 C1260,60 1350,30 1440,20 L1440,60 L0,60 Z" fill="#fff" />
-        </svg>
-      </div>
-
       {/* ── SOLUTION ── */}
       <section className="bg-white py-24 px-6">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
+            <h2 className="font-display font-bold italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
               {s.h2}
             </h2>
             <p className="text-[18px] text-gray-500 max-w-[520px] mx-auto">{s.sub}</p>
@@ -71,27 +57,27 @@ export function ProblemSection() {
             {s.cards.slice(0, 4).map((card, i) => {
               const SIcon = SolutionIcons[i];
               return (
-              <div key={i} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex gap-5 items-start">
-                <div className="w-[52px] h-[52px] rounded-[10px] bg-purple-100 text-purple-700 flex items-center justify-center flex-shrink-0">
-                  <SIcon className="w-6 h-6" />
+                <div key={i} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex gap-5 items-start">
+                  <div className="w-12 h-12 rounded-full bg-green-50 border border-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+                    <SIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-[18px] font-bold text-gray-900 mb-2">{card.title}</h3>
+                    <p className="text-[14px] text-gray-500 leading-[1.65]">{card.copy}</p>
+                    {"badge" in card && card.badge && (
+                      <span className="inline-block mt-3 text-[12px] font-bold text-green-700 bg-green-50 border border-green-100 px-3 py-1 rounded-full">
+                        {(card as { badge?: string }).badge}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-[18px] font-bold text-gray-900 mb-2">{card.title}</h3>
-                  <p className="text-[14px] text-gray-500 leading-[1.65]">{card.copy}</p>
-                  {"badge" in card && card.badge && (
-                    <span className="inline-block mt-3 text-[12px] font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full">
-                      {(card as { badge?: string }).badge}
-                    </span>
-                  )}
-                </div>
-              </div>
               );
             })}
 
             {/* Wide card */}
             <div className="md:col-span-2 bg-gray-50 rounded-2xl p-8 border border-gray-100 flex gap-5 items-start">
-              <div className="w-[52px] h-[52px] rounded-[10px] bg-purple-100 text-purple-700 flex items-center justify-center flex-shrink-0">
-                <SparklesIcon className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-full bg-green-50 border border-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+                <SparklesIcon className="w-5 h-5" />
               </div>
               <div>
                 <h3 className="text-[18px] font-bold text-gray-900 mb-2">{s.cards[4].title}</h3>

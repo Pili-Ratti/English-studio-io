@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans:    ["DM Sans", "system-ui", "sans-serif"],
-        display: ["Fraunces", "Georgia", "serif"],
+        display: ["Libre Baskerville", "Georgia", "serif"],
         body:    ["DM Sans", "system-ui", "sans-serif"],
         mono:    ["ui-monospace", "SFMono-Regular", "monospace"],
       },

@@ -1,3 +1,4 @@
+import { LanguageProvider } from "@/lib/LanguageContext";
 import { NavBar } from "@/components/layout/NavBar";
 import { HeroSection } from "@/components/layout/HeroSection";
 import { ProblemSection } from "@/components/layout/ProblemSection";
@@ -8,7 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <>
+    <LanguageProvider>
       <NavBar />
       <main>
         <HeroSection />
@@ -18,6 +19,6 @@ export default function Home() {
         <CTABanner />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

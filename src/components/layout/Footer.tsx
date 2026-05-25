@@ -8,7 +8,7 @@ export function Footer() {
   const pricing = translations[lang].pricing;
 
   return (
-    <footer className="bg-gray-900 text-white/70 pt-16 pb-8 px-6">
+    <footer className="bg-gray-900 text-white/60 pt-16 pb-8 px-6">
       <div className="max-w-[1140px] mx-auto">
 
         {/* Top grid */}
@@ -18,8 +18,8 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="#" className="flex items-center gap-2 no-underline mb-3">
               <div
-                className="w-8 h-8 rounded-[10px] flex items-center justify-center flex-shrink-0"
-                style={{ background: "linear-gradient(135deg, #22C55E, #7C3AED)" }}
+                className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                style={{ background: "linear-gradient(135deg, #22C55E, #16A34A)" }}
               >
                 <HouseIcon />
               </div>
@@ -30,10 +30,10 @@ export function Footer() {
 
           {/* Classes */}
           <div>
-            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">{t.classes}</h4>
+            <h4 className="text-[13px] font-extrabold text-white/40 tracking-[0.08em] uppercase mb-4">{t.classes}</h4>
             <div className="space-y-2">
               {pricing.plans.map((plan, i) => (
-                <a key={i} href="#pricing" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">
+                <a key={i} href="#pricing" className="block text-[14px] text-white/60 hover:text-white transition-colors no-underline font-semibold">
                   {plan.name}
                 </a>
               ))}
@@ -41,18 +41,18 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">{t.about}</h4>
+            <h4 className="text-[13px] font-extrabold text-white/40 tracking-[0.08em] uppercase mb-4">{t.about}</h4>
             <div className="space-y-2">
-              <a href="#how-it-works" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">{t.links.how}</a>
-              <a href="#faq" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">{t.links.faq}</a>
+              <a href="#how-it-works" className="block text-[14px] text-white/60 hover:text-white transition-colors no-underline font-semibold">{t.links.how}</a>
+              <a href="#faq" className="block text-[14px] text-white/60 hover:text-white transition-colors no-underline font-semibold">{t.links.faq}</a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">{t.contact}</h4>
+            <h4 className="text-[13px] font-extrabold text-white/40 tracking-[0.08em] uppercase mb-4">{t.contact}</h4>
             <div className="space-y-2">
-              <a href="mailto:hola@thefluencyhouse.com" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">hola@thefluencyhouse.com</a>
-              <a href="#" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">WhatsApp</a>
+              <a href="mailto:hola@thefluencyhouse.com" className="block text-[14px] text-white/60 hover:text-white transition-colors no-underline font-semibold">hola@thefluencyhouse.com</a>
+              <a href="#" className="block text-[14px] text-white/60 hover:text-white transition-colors no-underline font-semibold">WhatsApp</a>
             </div>
           </div>
 
@@ -63,7 +63,7 @@ export function Footer() {
           <p className="text-[13px] font-semibold">
             © {new Date().getFullYear()} {t.copyright}
           </p>
-          <div className="flex bg-white/[0.06] border border-white/10 rounded-full p-[3px] gap-0.5">
+          <div className="flex bg-white/[0.06] rounded-full p-[3px] gap-0.5">
             {(["ES", "EN"] as const).map((l) => {
               const langKey = l.toLowerCase() as "en" | "es";
               return (
@@ -72,7 +72,7 @@ export function Footer() {
                   onClick={() => setLang(langKey)}
                   aria-pressed={lang === langKey}
                   className={`text-[13px] font-bold px-3.5 py-[5px] rounded-full border-0 cursor-pointer transition-all duration-150 ${
-                    lang === langKey ? "bg-white/15 text-white" : "text-white/50 bg-transparent"
+                    lang === langKey ? "bg-white/15 text-white" : "text-white/40 bg-transparent"
                   }`}
                 >
                   {l}

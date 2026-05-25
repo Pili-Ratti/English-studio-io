@@ -2,21 +2,191 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "The Fluency House | Personalized English classes online",
-  description: "Real-world English built around you. No student books, no generic worksheets. Custom classes designed for your goals, your interests, your level. Free trial class.",
-  keywords: ["English classes online", "personalized English", "English teacher Argentina", "conversational English", "business English", "learn English Buenos Aires"],
+  title: "The Fluency House | Clases de inglés personalizadas online",
+  description:
+    "Clases de inglés personalizadas para cada estudiante. Sin libros de texto genéricos — cada clase construida para vos, tu nivel y tus objetivos. Primera clase gratis. Online vía Zoom o Google Meet.",
+  keywords: [
+    "clases de inglés online",
+    "inglés personalizado Argentina",
+    "profesor de inglés Buenos Aires",
+    "inglés conversacional",
+    "inglés de negocios",
+    "aprender inglés online",
+    "English classes online Argentina",
+    "personalized English lessons",
+    "clases de inglés particulares",
+    "inglés para trabajo",
+  ],
   authors: [{ name: "The Fluency House" }],
+  openGraph: {
+    title: "The Fluency House | Clases de inglés personalizadas online",
+    description:
+      "Clases de inglés reales, construidas para vos. Sin libros genéricos. Primera clase gratis. Online desde cualquier lugar.",
+    type: "website",
+    url: "https://thefluencyhouse.com",
+    siteName: "The Fluency House",
+    locale: "es_AR",
+    alternateLocale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Fluency House | Clases de inglés personalizadas online",
+    description:
+      "Clases de inglés reales, construidas para vos. Primera clase gratis.",
+  },
+  alternates: {
+    canonical: "https://thefluencyhouse.com",
+    languages: {
+      "es-AR": "https://thefluencyhouse.com",
+      "en-US": "https://thefluencyhouse.com",
+    },
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://thefluencyhouse.com/#organization",
+      name: "The Fluency House",
+      url: "https://thefluencyhouse.com",
+      description:
+        "Clases de inglés online personalizadas para estudiantes de Argentina y Latinoamérica. Cada clase construida desde cero según los objetivos e intereses de cada alumno. 5 años de experiencia en inglés de negocios real.",
+      inLanguage: ["es-AR", "en"],
+      serviceType: "English Language Instruction",
+      areaServed: [
+        { "@type": "Country", name: "Argentina" },
+        { "@type": "Country", name: "Uruguay" },
+        { "@type": "Country", name: "Chile" },
+        { "@type": "Country", name: "Colombia" },
+      ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Clases de inglés",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            name: "Conversación",
+            description:
+              "Sesión semanal de conversación de 60 minutos. Feedback en tiempo real, vocabulario en contexto, contenido adaptado a tus intereses.",
+            price: "35",
+            priceCurrency: "USD",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "120",
+              priceCurrency: "USD",
+              billingDuration: "P1M",
+            },
+          },
+          {
+            "@type": "Offer",
+            name: "Full English",
+            description:
+              "Clase estructurada semanal de 90 minutos. Cubre gramática, vocabulario, listening, speaking y escritura con presentación personalizada en cada sesión.",
+            price: "45",
+            priceCurrency: "USD",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "160",
+              priceCurrency: "USD",
+              billingDuration: "P1M",
+            },
+          },
+          {
+            "@type": "Offer",
+            name: "Empresarial",
+            description:
+              "Programa de inglés completamente personalizado para empresas. Cubre comunicación internacional, presentaciones, emails y negociaciones.",
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              description: "Cotización a medida según tamaño del equipo y frecuencia",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://thefluencyhouse.com/#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "¿Necesito un nivel específico para empezar las clases de inglés?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. Hay un camino para cada nivel — desde principiante absoluto hasta casi nativo. La clase de prueba gratis está diseñada para entender exactamente dónde estás y qué necesitás antes de cualquier otra cosa.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Las clases son online o presenciales?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Todas online vía Google Meet o Zoom. Podés sumarte desde Buenos Aires, Madrid o donde estés. Solo necesitás una conexión decente a internet.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Cuánto cuestan las clases de inglés?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Las clases de Conversación cuestan USD 35 por clase o USD 120 por mes. Las clases Full English cuestan USD 45 por clase o USD 160 por mes. También hay opciones grupales a menor precio. La primera clase es siempre gratis.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Cuál es la diferencia entre el plan Conversación y Full English?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Conversación es para estudiantes que ya tienen una base y quieren desarrollar fluencia real (60 min). Full English es un programa estructurado que cubre gramática, vocabulario, listening, speaking y escritura semana a semana (90 min).",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need a certain level to start English classes?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "No. There's a path for every level — complete beginner to near-native. The free trial class is designed to understand exactly where you are and what you need before anything else.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much do the English classes cost?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Conversation classes cost $35 per class or $120 per month. Full English classes cost $45 per class or $160 per month. Group pricing is also available. The first class is always free.",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thefluencyhouse.com/#website",
+      url: "https://thefluencyhouse.com",
+      name: "The Fluency House",
+      inLanguage: ["es-AR", "en"],
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://thefluencyhouse.com",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es-AR" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@1,9..144,700;1,9..144,800;1,9..144,900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>{children}</body>
