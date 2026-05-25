@@ -1,4 +1,12 @@
+"use client";
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
+
 export function Footer() {
+  const { lang, setLang } = useLanguage();
+  const t = translations[lang].footer;
+  const pricing = translations[lang].pricing;
+
   return (
     <footer className="bg-gray-900 text-white/70 pt-16 pb-8 px-6">
       <div className="max-w-[1140px] mx-auto">
@@ -17,33 +25,33 @@ export function Footer() {
               </div>
               <span className="text-[18px] font-bold text-white">The Fluency House</span>
             </a>
-            <p className="text-[14px] leading-[1.7] max-w-[240px]">
-              Real English, taught by a real person who&apos;s lived it. Personalized classes for every level.
-            </p>
+            <p className="text-[14px] leading-[1.7] max-w-[240px]">{t.tagline}</p>
           </div>
 
-          {/* Links */}
+          {/* Classes */}
           <div>
-            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">Classes</h4>
+            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">{t.classes}</h4>
             <div className="space-y-2">
-              <a href="#pricing" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">Conversation</a>
-              <a href="#pricing" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">Full English</a>
-              <a href="#pricing" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">Enterprise</a>
+              {pricing.plans.map((plan, i) => (
+                <a key={i} href="#pricing" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">
+                  {plan.name}
+                </a>
+              ))}
             </div>
           </div>
 
           <div>
-            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">About</h4>
+            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">{t.about}</h4>
             <div className="space-y-2">
-              <a href="#how-it-works" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">How it works</a>
-              <a href="#faq" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">FAQ</a>
+              <a href="#how-it-works" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">{t.links.how}</a>
+              <a href="#faq" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">{t.links.faq}</a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">Contact</h4>
+            <h4 className="text-[14px] font-extrabold text-white tracking-[0.06em] uppercase mb-4">{t.contact}</h4>
             <div className="space-y-2">
-              <a href="mailto:pilar@thefluencyhouse.com" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">pilar@thefluencyhouse.com</a>
+              <a href="mailto:hola@thefluencyhouse.com" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">hola@thefluencyhouse.com</a>
               <a href="#" className="block text-[14px] text-white/65 hover:text-white transition-colors no-underline font-semibold">WhatsApp</a>
             </div>
           </div>
@@ -53,11 +61,24 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="text-[13px] font-semibold">
-            © {new Date().getFullYear()} The Fluency House
+            © {new Date().getFullYear()} {t.copyright}
           </p>
           <div className="flex bg-white/[0.06] border border-white/10 rounded-full p-[3px] gap-0.5">
-            <button className="text-[13px] font-bold px-3.5 py-[5px] rounded-full text-white/50 bg-transparent border-0 cursor-pointer">ES</button>
-            <button className="text-[13px] font-bold px-3.5 py-[5px] rounded-full bg-white/15 text-white border-0 cursor-pointer">EN</button>
+            {(["ES", "EN"] as const).map((l) => {
+              const langKey = l.toLowerCase() as "en" | "es";
+              return (
+                <button
+                  key={l}
+                  onClick={() => setLang(langKey)}
+                  aria-pressed={lang === langKey}
+                  className={`text-[13px] font-bold px-3.5 py-[5px] rounded-full border-0 cursor-pointer transition-all duration-150 ${
+                    lang === langKey ? "bg-white/15 text-white" : "text-white/50 bg-transparent"
+                  }`}
+                >
+                  {l}
+                </button>
+              );
+            })}
           </div>
         </div>
 

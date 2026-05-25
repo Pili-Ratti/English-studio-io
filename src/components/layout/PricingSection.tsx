@@ -1,83 +1,20 @@
 "use client";
 import { useState } from "react";
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 type PriceMode = "individual" | "group";
 
-const plans = [
-  {
-    id: "conversation",
-    badge: "Conversation",
-    badgeColor: "text-pink-700 bg-pink-100",
-    name: "Conversation",
-    tagline: '"For people who already know English — they just need to start living in it."',
-    desc: "Weekly sessions built around real topics. No grammar drills — just fluency work. You talk, you get natural feedback in real time, and you stop overthinking every sentence.",
-    includes: [
-      "Weekly 60-min conversation session",
-      "Topic chosen around your interests each week",
-      "Vocabulary in context, not lists",
-      "Natural feedback on fluency",
-      "Curated content between classes",
-      "WhatsApp access for quick questions",
-    ],
-    bestFor: "Best for: B1–C1 students who freeze when they have to speak.",
-    priceInd: "$35 / class · $120 / month",
-    priceSaveInd: "Save $20 with the monthly plan",
-    priceGrp: "$20 / person / class · $70 / month",
-    noteGrp: "Groups of 2–4. Split the cost.",
-    cta: "Book your free trial →",
-    featured: false,
-  },
-  {
-    id: "full-english",
-    badge: "Full English",
-    badgeColor: "text-green-700 bg-green-100",
-    name: "Full English",
-    tagline: '"Grammar, speaking, listening, writing — all of it, built around you."',
-    desc: "Structured classes that cover all four skills. Every class is a custom-built presentation. Grammar with real examples, listening work, writing feedback, speaking practice every session. There's a thread — every class connects to the next.",
-    includes: [
-      "Weekly 90-min structured class",
-      "Custom-built presentation every session",
-      "Grammar + vocabulary + listening + speaking + writing",
-      "Written feedback after every class",
-      "Personal progress tracker updated monthly",
-      "Homework tailored to your weak points",
-      "WhatsApp access during the week",
-    ],
-    bestFor: "Best for: Students building from scratch or filling gaps. IELTS, job interviews, professional advancement.",
-    priceInd: "$45 / class · $160 / month",
-    priceSaveInd: "Save $20 with the monthly plan",
-    priceGrp: "$28 / person / class · $95 / month",
-    noteGrp: "Individual written feedback for all participants.",
-    cta: "Book your free trial →",
-    featured: true,
-  },
-  {
-    id: "enterprise",
-    badge: "Enterprise",
-    badgeColor: "text-purple-700 bg-purple-100",
-    name: "Enterprise",
-    tagline: '"English for your team. Built around your industry."',
-    desc: "A fully custom English program for companies. Whether your team needs to communicate with international clients, prep for presentations, or write better emails — built from scratch around your business and your people.",
-    includes: [
-      "Free initial needs assessment",
-      "Fully custom curriculum",
-      "Group sessions, flexible scheduling",
-      "Business English: emails, meetings, negotiations",
-      "Individual progress reports per employee",
-      "Dedicated WhatsApp channel for the team",
-      "Monthly program review",
-    ],
-    bestFor: "Best for: Companies with international clients, remote teams working in English, employees preparing for cross-border roles.",
-    priceCustom: "Custom quote",
-    priceCustomSub: "Based on team size and session frequency.",
-    priceCustomXs: "Response within 24 hours.",
-    cta: "Get a free quote →",
-    featured: false,
-  },
+const planMeta = [
+  { id: "conversation", badgeColor: "text-pink-700 bg-pink-100", featured: false },
+  { id: "full-english",  badgeColor: "text-green-700 bg-green-100", featured: true },
+  { id: "enterprise",   badgeColor: "text-purple-700 bg-purple-100", featured: false },
 ] as const;
 
 export function PricingSection() {
   const [mode, setMode] = useState<PriceMode>("individual");
+  const { lang } = useLanguage();
+  const t = translations[lang].pricing;
 
   return (
     <>
@@ -94,11 +31,9 @@ export function PricingSection() {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
-              Pick your plan.
+              {t.h2}
             </h2>
-            <p className="text-[18px] text-gray-500">
-              All plans include a free trial class. No commitment until you&apos;re sure.
-            </p>
+            <p className="text-[18px] text-gray-500">{t.sub}</p>
           </div>
 
           {/* Toggle */}
@@ -113,17 +48,24 @@ export function PricingSection() {
                     mode === m ? "bg-gray-900 text-white" : "text-gray-500 bg-transparent"
                   }`}
                 >
-                  {m === "individual" ? "Individual" : "Group (2–4)"}
+                  {m === "individual" ? t.toggleInd : t.toggleGrp}
                 </button>
               ))}
             </div>
-            <p className="text-[13px] text-gray-500 font-semibold">Enterprise pricing is fixed.</p>
+            <p className="text-[13px] text-gray-500 font-semibold">{t.toggleNote}</p>
           </div>
 
           {/* Cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 items-start">
-            {plans.map((plan) => (
-              <PlanCard key={plan.id} plan={plan} mode={mode} />
+            {t.plans.map((plan, i) => (
+              <PlanCard
+                key={planMeta[i].id}
+                plan={plan}
+                meta={planMeta[i]}
+                mode={mode}
+                mostPopular={t.mostPopular}
+                noCommit={t.noCommit}
+              />
             ))}
           </div>
 
@@ -133,23 +75,54 @@ export function PricingSection() {
   );
 }
 
-function PlanCard({ plan, mode }: { plan: typeof plans[number]; mode: PriceMode }) {
-  const isEnterprise = plan.id === "enterprise";
+interface PlanData {
+  badge: string;
+  name: string;
+  tagline: string;
+  desc: string;
+  includes: readonly string[];
+  bestFor: string;
+  cta: string;
+  priceInd?: string;
+  priceSaveInd?: string;
+  priceGrp?: string;
+  noteGrp?: string;
+  priceCustom?: string;
+  priceCustomSub?: string;
+  priceCustomXs?: string;
+}
+
+type PlanMetaItem = typeof planMeta[number];
+
+function PlanCard({
+  plan,
+  meta,
+  mode,
+  mostPopular,
+  noCommit,
+}: {
+  plan: PlanData;
+  meta: PlanMetaItem;
+  mode: PriceMode;
+  mostPopular: string;
+  noCommit: string;
+}) {
+  const isEnterprise = meta.id === "enterprise";
 
   return (
     <div className={`relative bg-white rounded-2xl p-8 border-2 shadow-sm hover:shadow-lg transition-all duration-200 ${
-      plan.featured ? "border-green-400 shadow-[0_0_0_4px_rgba(74,222,128,0.15)]" : "border-gray-200"
+      meta.featured ? "border-green-400 shadow-[0_0_0_4px_rgba(74,222,128,0.15)]" : "border-gray-200"
     }`}>
 
       {/* Popular badge */}
-      {plan.featured && (
+      {meta.featured && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-green-400 text-gray-900 text-[12px] font-extrabold tracking-[0.06em] uppercase px-5 py-1.5 rounded-full border-2 border-green-600 whitespace-nowrap">
-          Most popular
+          {mostPopular}
         </div>
       )}
 
       {/* Tier badge */}
-      <span className={`inline-block text-[12px] font-bold px-3 py-1 rounded-full mb-4 ${plan.badgeColor}`}>
+      <span className={`inline-block text-[12px] font-bold px-3 py-1 rounded-full mb-4 ${meta.badgeColor}`}>
         {plan.badge}
       </span>
 
@@ -177,15 +150,15 @@ function PlanCard({ plan, mode }: { plan: typeof plans[number]; mode: PriceMode 
 
       {/* Price */}
       <div className="mb-6">
-        {isEnterprise ? (
+        {isEnterprise && "priceCustom" in plan ? (
           <>
-            <div className="text-[28px] font-extrabold text-purple-700">{"priceCustom" in plan ? plan.priceCustom : ""}</div>
+            <div className="text-[28px] font-extrabold text-purple-700">{plan.priceCustom}</div>
             {"priceCustomSub" in plan && <div className="text-[13px] text-gray-500 mt-1">{plan.priceCustomSub}</div>}
             {"priceCustomXs" in plan && <div className="text-[12px] text-gray-400 mt-1">{plan.priceCustomXs}</div>}
           </>
         ) : mode === "individual" && "priceInd" in plan ? (
           <>
-            <div className={`text-[21px] font-extrabold leading-snug ${plan.featured ? "text-green-700" : "text-gray-900"}`}>
+            <div className={`text-[21px] font-extrabold leading-snug ${meta.featured ? "text-green-700" : "text-gray-900"}`}>
               {plan.priceInd}
             </div>
             {"priceSaveInd" in plan && (
@@ -194,7 +167,7 @@ function PlanCard({ plan, mode }: { plan: typeof plans[number]; mode: PriceMode 
           </>
         ) : "priceGrp" in plan ? (
           <>
-            <div className={`text-[21px] font-extrabold leading-snug ${plan.featured ? "text-green-700" : "text-gray-900"}`}>
+            <div className={`text-[21px] font-extrabold leading-snug ${meta.featured ? "text-green-700" : "text-gray-900"}`}>
               {plan.priceGrp}
             </div>
             {"noteGrp" in plan && (
@@ -208,7 +181,7 @@ function PlanCard({ plan, mode }: { plan: typeof plans[number]; mode: PriceMode 
       <a
         href="#"
         className={`block w-full text-center py-3.5 px-5 rounded-[10px] font-bold text-[15px] transition-all duration-150 no-underline ${
-          plan.featured
+          meta.featured
             ? "bg-green-400 text-gray-900 border-2 border-green-600 border-b-[4px] shadow-[0_2px_0_#16A34A] hover:-translate-y-px hover:shadow-[0_4px_0_#16A34A] active:translate-y-0.5"
             : isEnterprise
             ? "bg-purple-600 text-white hover:bg-purple-700"
@@ -219,7 +192,7 @@ function PlanCard({ plan, mode }: { plan: typeof plans[number]; mode: PriceMode 
       </a>
 
       {isEnterprise && (
-        <p className="text-[13px] text-gray-400 text-center mt-2.5">No commitment. Just a conversation.</p>
+        <p className="text-[13px] text-gray-400 text-center mt-2.5">{noCommit}</p>
       )}
     </div>
   );
