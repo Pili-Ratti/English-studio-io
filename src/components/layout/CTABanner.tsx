@@ -7,7 +7,7 @@ export function CTABanner() {
   const t = translations[lang].cta;
 
   return (
-    <section className="bg-gray-900 py-24 px-6 text-center relative overflow-hidden">
+    <section className="bg-gray-900 py-16 md:py-24 px-5 md:px-6 text-center relative overflow-hidden">
       {/* Subtle green glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
@@ -21,7 +21,7 @@ export function CTABanner() {
         <p className="text-[18px] text-white/70 mb-9">{t.sub}</p>
         <a
           href="#"
-          className="inline-flex items-center justify-center font-bold text-[17px] bg-green-500 text-white px-12 py-4 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline"
+          className="inline-flex items-center justify-center font-bold text-[16px] md:text-[17px] bg-green-500 text-white px-8 md:px-12 py-4 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline w-full sm:w-auto"
         >
           {t.btn}
         </a>

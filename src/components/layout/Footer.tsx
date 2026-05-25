@@ -8,7 +8,7 @@ export function Footer() {
   const pricing = translations[lang].pricing;
 
   return (
-    <footer className="bg-gray-900 text-white/60 pt-16 pb-8 px-6">
+    <footer className="bg-gray-900 text-white/60 pt-12 md:pt-16 pb-8 px-5 md:px-6">
       <div className="max-w-[1140px] mx-auto">
 
         {/* Top grid */}

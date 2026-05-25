@@ -22,7 +22,7 @@ export function HeroSection() {
   return (
     <>
       {/* ── HERO ── */}
-      <section id="hero" className="bg-white pt-20 pb-20 px-6 relative overflow-hidden">
+      <section id="hero" className="bg-white pt-14 pb-14 md:pt-20 md:pb-20 px-5 md:px-6 relative overflow-hidden">
         {/* Animated wave background */}
         <Waves
           lineColor="rgba(34, 197, 94, 0.18)"
@@ -72,11 +72,11 @@ export function HeroSection() {
 
             <div className="flex gap-3 flex-wrap mb-8">
               <a href="#pricing"
-                className="inline-flex items-center justify-center font-bold text-[16px] bg-green-500 text-white px-8 py-3.5 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline">
+                className="inline-flex items-center justify-center font-bold text-[15px] md:text-[16px] bg-green-500 text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline">
                 {h.cta1}
               </a>
               <a href="#how-it-works"
-                className="inline-flex items-center justify-center font-bold text-[16px] text-gray-700 border border-gray-300 px-8 py-3.5 rounded-full hover:border-gray-500 hover:text-gray-900 transition-colors duration-150 no-underline">
+                className="inline-flex items-center justify-center font-bold text-[15px] md:text-[16px] text-gray-700 border border-gray-300 px-6 md:px-8 py-3.5 rounded-full hover:border-gray-500 hover:text-gray-900 transition-colors duration-150 no-underline">
                 {h.cta2}
               </a>
             </div>

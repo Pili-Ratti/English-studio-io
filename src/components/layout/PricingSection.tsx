@@ -18,7 +18,7 @@ export function PricingSection() {
   const t = translations[lang].pricing;
 
   return (
-    <section id="pricing" className="bg-gray-50 py-24 px-6">
+    <section id="pricing" className="bg-gray-50 py-16 md:py-24 px-5 md:px-6 overflow-x-hidden">
       <div className="max-w-[1140px] mx-auto">
 
         {/* Header */}
@@ -114,7 +114,7 @@ function PlanCard({
       glowColor={glowColorStr[meta.id]}
       glowIntensity={meta.featured ? 1.0 : 0.7}
       fillOpacity={meta.featured ? 0.25 : 0.15}
-      className={`relative hover:-translate-y-1 transition-transform duration-200 ${meta.featured ? "ring-2 ring-green-400 ring-offset-2" : ""}`}
+      className={`relative hover:-translate-y-1 transition-transform duration-200 ${meta.featured ? "ring-2 ring-green-400" : ""}`}
     >
 
       <div className="p-8">

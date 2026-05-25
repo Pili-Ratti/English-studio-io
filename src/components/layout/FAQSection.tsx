@@ -9,7 +9,7 @@ export function FAQSection() {
   const t = translations[lang].faq;
 
   return (
-    <section id="faq" className="bg-white py-24 px-6">
+    <section id="faq" className="bg-white py-16 md:py-24 px-5 md:px-6">
       <div className="max-w-[1140px] mx-auto">
         <div className="text-center mb-14">
           <h2 className="font-display font-bold italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
