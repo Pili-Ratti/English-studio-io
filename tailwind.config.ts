@@ -17,19 +17,24 @@ const config: Config = {
         mono:    ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       animation: {
-        marquee:    "marquee 28s linear infinite",
-        float:      "float 4s ease-in-out infinite",
-        "float-2":  "float 4s ease-in-out 1s infinite",
-        "float-3":  "float 4s ease-in-out 2s infinite",
-        "typing-1": "typing 1.2s ease-in-out infinite",
-        "typing-2": "typing 1.2s ease-in-out 0.2s infinite",
-        "typing-3": "typing 1.2s ease-in-out 0.4s infinite",
-        "pulse-dot":"pulse-dot 2s ease-in-out infinite",
+        marquee:      "marquee 28s linear infinite",
+        "marquee-r":  "marquee-r 36s linear infinite",
+        float:        "float 4s ease-in-out infinite",
+        "float-2":    "float 4s ease-in-out 1s infinite",
+        "float-3":    "float 4s ease-in-out 2s infinite",
+        "typing-1":   "typing 1.2s ease-in-out infinite",
+        "typing-2":   "typing 1.2s ease-in-out 0.2s infinite",
+        "typing-3":   "typing 1.2s ease-in-out 0.4s infinite",
+        "pulse-dot":  "pulse-dot 2s ease-in-out infinite",
       },
       keyframes: {
         marquee: {
           from: { transform: "translateX(0)" },
           to:   { transform: "translateX(-50%)" },
+        },
+        "marquee-r": {
+          from: { transform: "translateX(-50%)" },
+          to:   { transform: "translateX(0)" },
         },
         float: {
           "0%,100%": { transform: "translateY(0)" },

@@ -2,6 +2,23 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 
+const cardPalette = [
+  { bg: "bg-orange-50 border-orange-100", icon: "bg-orange-100 text-orange-600" },
+  { bg: "bg-blue-50 border-blue-100",     icon: "bg-blue-100 text-blue-600" },
+  { bg: "bg-lime-50 border-lime-100",     icon: "bg-lime-100 text-lime-700" },
+  { bg: "bg-purple-50 border-purple-100", icon: "bg-purple-100 text-purple-600" },
+  { bg: "bg-rose-50 border-rose-100",     icon: "bg-rose-100 text-rose-600" },
+  { bg: "bg-amber-50 border-amber-100",   icon: "bg-amber-100 text-amber-600" },
+];
+
+const solutionPalette = [
+  { bg: "bg-green-50 border-green-100",   icon: "bg-green-100 text-green-600",  badge: "bg-green-100 text-green-700 border-green-200" },
+  { bg: "bg-blue-50 border-blue-100",     icon: "bg-blue-100 text-blue-600",    badge: "bg-blue-100 text-blue-700 border-blue-200" },
+  { bg: "bg-orange-50 border-orange-100", icon: "bg-orange-100 text-orange-600", badge: "bg-orange-100 text-orange-700 border-orange-200" },
+  { bg: "bg-purple-50 border-purple-100", icon: "bg-purple-100 text-purple-600", badge: "bg-purple-100 text-purple-700 border-purple-200" },
+  { bg: "bg-lime-50 border-lime-100",     icon: "bg-lime-100 text-lime-700",    badge: "bg-lime-100 text-lime-700 border-lime-200" },
+];
+
 export function ProblemSection() {
   const { lang } = useLanguage();
   const t = translations[lang];
@@ -11,7 +28,7 @@ export function ProblemSection() {
   return (
     <>
       {/* ── PROBLEMS ── */}
-      <section id="how-it-works" className="bg-gray-50 py-24 px-6">
+      <section id="how-it-works" className="bg-white py-24 px-6">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-display font-bold italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
@@ -23,19 +40,17 @@ export function ProblemSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {p.cards.map((card, i) => {
               const PIcon = ProblemIcons[i];
+              const palette = cardPalette[i % cardPalette.length];
               return (
-                <div
-                  key={i}
-                  className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:-translate-y-1 hover:shadow-md transition-all duration-200"
-                >
-                  <div className="w-12 h-12 rounded-full bg-green-50 border border-green-100 text-green-600 flex items-center justify-center mb-4">
+                <div key={i} className={`rounded-2xl p-7 border ${palette.bg} hover:-translate-y-1 hover:shadow-md transition-all duration-200`}>
+                  <div className={`w-11 h-11 rounded-full flex items-center justify-center mb-4 ${palette.icon}`}>
                     <PIcon className="w-5 h-5" />
                   </div>
                   <span className="block text-[11px] font-bold tracking-[0.1em] uppercase text-gray-400 mb-2">
                     {card.label}
                   </span>
                   <h3 className="text-[17px] font-bold text-gray-900 mb-2">{card.title}</h3>
-                  <p className="text-[14px] text-gray-500 leading-[1.65]">{card.copy}</p>
+                  <p className="text-[14px] text-gray-600 leading-[1.65]">{card.copy}</p>
                 </div>
               );
             })}
@@ -44,7 +59,7 @@ export function ProblemSection() {
       </section>
 
       {/* ── SOLUTION ── */}
-      <section className="bg-white py-24 px-6">
+      <section className="bg-gray-50 py-24 px-6">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center mb-14">
             <h2 className="font-display font-bold italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
@@ -56,16 +71,17 @@ export function ProblemSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {s.cards.slice(0, 4).map((card, i) => {
               const SIcon = SolutionIcons[i];
+              const palette = solutionPalette[i];
               return (
-                <div key={i} className="bg-gray-50 rounded-2xl p-8 border border-gray-100 flex gap-5 items-start">
-                  <div className="w-12 h-12 rounded-full bg-green-50 border border-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+                <div key={i} className={`rounded-2xl p-8 border flex gap-5 items-start ${palette.bg}`}>
+                  <div className={`w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 ${palette.icon}`}>
                     <SIcon className="w-5 h-5" />
                   </div>
                   <div>
                     <h3 className="text-[18px] font-bold text-gray-900 mb-2">{card.title}</h3>
-                    <p className="text-[14px] text-gray-500 leading-[1.65]">{card.copy}</p>
+                    <p className="text-[14px] text-gray-600 leading-[1.65]">{card.copy}</p>
                     {"badge" in card && card.badge && (
-                      <span className="inline-block mt-3 text-[12px] font-bold text-green-700 bg-green-50 border border-green-100 px-3 py-1 rounded-full">
+                      <span className={`inline-block mt-3 text-[12px] font-bold px-3 py-1 rounded-full border ${palette.badge}`}>
                         {(card as { badge?: string }).badge}
                       </span>
                     )}
@@ -75,13 +91,13 @@ export function ProblemSection() {
             })}
 
             {/* Wide card */}
-            <div className="md:col-span-2 bg-gray-50 rounded-2xl p-8 border border-gray-100 flex gap-5 items-start">
-              <div className="w-12 h-12 rounded-full bg-green-50 border border-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
+            <div className={`md:col-span-2 rounded-2xl p-8 border flex gap-5 items-start ${solutionPalette[4].bg}`}>
+              <div className={`w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 ${solutionPalette[4].icon}`}>
                 <SparklesIcon className="w-5 h-5" />
               </div>
               <div>
                 <h3 className="text-[18px] font-bold text-gray-900 mb-2">{s.cards[4].title}</h3>
-                <p className="text-[14px] text-gray-500 leading-[1.65] max-w-[720px]">{s.cards[4].copy}</p>
+                <p className="text-[14px] text-gray-600 leading-[1.65] max-w-[720px]">{s.cards[4].copy}</p>
               </div>
             </div>
           </div>
