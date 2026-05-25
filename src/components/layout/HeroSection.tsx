@@ -101,7 +101,7 @@ export function HeroSection() {
           </div>
 
           {/* ── Right: chat mockup ── */}
-          <div className="relative z-10 order-first lg:order-none">
+          <div className="relative z-10">
             {/* Floating context pills */}
             <div className="hidden md:flex absolute -top-4 right-5 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float">
               <PencilIcon className="text-green-600 w-3.5 h-3.5" />
