@@ -1,7 +1,6 @@
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { NavBar } from "@/components/layout/NavBar";
 import { HeroSection } from "@/components/layout/HeroSection";
-import { SocialProofSection } from "@/components/layout/SocialProofSection";
 import { ProblemSection } from "@/components/layout/ProblemSection";
 import { PricingSection } from "@/components/layout/PricingSection";
 import { FAQSection } from "@/components/layout/FAQSection";
@@ -14,7 +13,6 @@ export default function Home() {
       <NavBar />
       <main>
         <HeroSection />
-        <SocialProofSection />
         <ProblemSection />
         <PricingSection />
         <FAQSection />

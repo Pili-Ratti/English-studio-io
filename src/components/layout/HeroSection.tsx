@@ -1,6 +1,7 @@
 "use client";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import Waves from "@/components/ui/Waves";
 
 const topicPills = [
   { label: "Business English", color: "bg-orange-100 text-orange-700 border-orange-200" },
@@ -22,13 +23,20 @@ export function HeroSection() {
     <>
       {/* ── HERO ── */}
       <section id="hero" className="bg-white pt-20 pb-20 px-6 relative overflow-hidden">
-        {/* Background blobs */}
-        <div className="absolute -top-40 -right-32 w-[500px] h-[500px] rounded-full pointer-events-none opacity-60"
-          style={{ background: "radial-gradient(circle, rgba(34,197,94,0.12) 0%, rgba(163,230,53,0.06) 50%, transparent 70%)" }} />
-        <div className="absolute bottom-0 -left-32 w-[400px] h-[400px] rounded-full pointer-events-none opacity-50"
-          style={{ background: "radial-gradient(circle, rgba(251,146,60,0.10) 0%, transparent 70%)" }} />
-        <div className="absolute top-1/2 left-1/3 w-[300px] h-[300px] rounded-full pointer-events-none opacity-30"
-          style={{ background: "radial-gradient(circle, rgba(96,165,250,0.10) 0%, transparent 70%)" }} />
+        {/* Animated wave background */}
+        <Waves
+          lineColor="rgba(34, 197, 94, 0.18)"
+          backgroundColor="transparent"
+          waveSpeedX={0.018}
+          waveSpeedY={0.006}
+          waveAmpX={40}
+          waveAmpY={20}
+          xGap={18}
+          yGap={44}
+          friction={0.93}
+          tension={0.004}
+          maxCursorMove={80}
+        />
 
         <div className="max-w-[1140px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -95,16 +103,16 @@ export function HeroSection() {
           {/* ── Right: chat mockup ── */}
           <div className="relative z-10 order-first lg:order-none">
             {/* Floating context pills */}
-            <div className="hidden md:flex absolute -top-4 right-5 bg-orange-400 text-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold border-0 shadow-md items-center gap-2 animate-float">
-              <PencilIcon className="w-3.5 h-3.5" />
+            <div className="hidden md:flex absolute -top-4 right-5 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float">
+              <PencilIcon className="text-green-600 w-3.5 h-3.5" />
               {h.floating.custom}
             </div>
-            <div className="hidden md:flex absolute bottom-10 -left-5 bg-blue-400 text-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold border-0 shadow-md items-center gap-2 animate-float-2">
-              <ChatIcon className="w-3.5 h-3.5" />
+            <div className="hidden md:flex absolute bottom-10 -left-5 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float-2">
+              <ChatIcon className="text-green-600 w-3.5 h-3.5" />
               {h.floating.conversation}
             </div>
-            <div className="hidden md:flex absolute top-1/2 -right-6 -translate-y-1/2 bg-lime-400 text-gray-900 rounded-2xl px-3.5 py-2.5 text-[13px] font-bold border-0 shadow-md items-center gap-2 animate-float-3">
-              <GiftIcon className="w-3.5 h-3.5" />
+            <div className="hidden md:flex absolute top-1/2 -right-6 -translate-y-1/2 bg-white rounded-2xl px-3.5 py-2.5 text-[13px] font-bold text-gray-700 border border-gray-200 shadow-md items-center gap-2 animate-float-3">
+              <GiftIcon className="text-green-600 w-3.5 h-3.5" />
               {h.floating.trial}
             </div>
 
@@ -128,13 +136,13 @@ export function HeroSection() {
                 <div className="bg-gray-900 text-white text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
                   {h.chat.b1}
                 </div>
-                <div className="bg-orange-400 text-white text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-bl-sm max-w-[85%] self-end">
+                <div className="bg-green-100 text-green-800 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-bl-sm max-w-[85%] self-end">
                   {h.chat.b2}
                 </div>
-                <div className="bg-blue-50 border border-blue-100 text-gray-700 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
+                <div className="bg-white border border-gray-200 text-gray-700 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
                   {h.chat.b3a}<strong>&ldquo;whodunit&rdquo;</strong>{h.chat.b3b}
                 </div>
-                <div className="bg-lime-400 text-gray-900 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-bl-sm max-w-[85%] self-end">
+                <div className="bg-green-100 text-green-800 text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-bl-sm max-w-[85%] self-end">
                   {h.chat.b4}
                 </div>
                 <div className="bg-gray-900 text-white text-[14px] font-semibold leading-[1.5] px-3.5 py-2.5 rounded-2xl rounded-br-sm max-w-[85%] self-start">
