@@ -11,9 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans:    ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
-        body:    ["Inter", "system-ui", "sans-serif"],
+        sans:    ["DM Sans", "system-ui", "sans-serif"],
+        display: ["Fraunces", "Georgia", "serif"],
+        body:    ["DM Sans", "system-ui", "sans-serif"],
         mono:    ["ui-monospace", "SFMono-Regular", "monospace"],
       },
       animation: {

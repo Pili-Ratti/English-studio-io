@@ -35,7 +35,7 @@ export function FAQSection() {
     <section id="faq" className="bg-white py-24 px-6">
       <div className="max-w-[1140px] mx-auto">
         <div className="text-center mb-14">
-          <h2 className="font-extrabold text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
+          <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
             Got questions?
           </h2>
         </div>

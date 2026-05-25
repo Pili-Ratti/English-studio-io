@@ -14,7 +14,7 @@ export function CTABanner() {
       />
 
       <div className="relative z-10 max-w-[600px] mx-auto">
-        <h2 className="font-extrabold text-white mb-3 leading-[1.15]" style={{ fontSize: "clamp(28px, 5vw, 48px)" }}>
+        <h2 className="font-display font-black italic text-white mb-3 leading-[1.1]" style={{ fontSize: "clamp(28px, 5vw, 48px)" }}>
           Your first class is free. Always.
         </h2>
         <p className="text-[18px] text-white/80 mb-9">

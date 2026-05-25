@@ -93,7 +93,7 @@ export function PricingSection() {
 
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="font-extrabold text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
+            <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
               Pick your plan.
             </h2>
             <p className="text-[18px] text-gray-500">

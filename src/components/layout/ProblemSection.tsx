@@ -80,7 +80,7 @@ export function ProblemSection() {
       <section id="how-it-works" className="bg-[#FAF5FF] py-24 px-6">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-extrabold text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
+            <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
               Sound familiar?
             </h2>
             <p className="text-[18px] text-gray-500 max-w-[520px] mx-auto">
@@ -122,7 +122,7 @@ export function ProblemSection() {
       <section className="bg-white py-24 px-6">
         <div className="max-w-[1140px] mx-auto">
           <div className="text-center mb-14">
-            <h2 className="font-extrabold text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
+            <h2 className="font-display font-black italic text-gray-900 mb-3" style={{ fontSize: "clamp(32px, 5vw, 48px)" }}>
               Here&apos;s why it&apos;s different.
             </h2>
             <p className="text-[18px] text-gray-500 max-w-[520px] mx-auto">

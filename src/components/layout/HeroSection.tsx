@@ -32,11 +32,10 @@ export function HeroSection() {
               Free first class — always
             </span>
 
-            <h1 className="font-extrabold leading-[1.08] text-gray-900 mb-5"
+            <h1 className="font-display font-black italic leading-[1.05] text-gray-900 mb-5"
               style={{ fontSize: "clamp(40px, 6vw, 72px)" }}>
               The English class that actually{" "}
               <em
-                className="not-italic"
                 style={{
                   background: "linear-gradient(135deg, #7C3AED, #DB2777)",
                   WebkitBackgroundClip: "text",
