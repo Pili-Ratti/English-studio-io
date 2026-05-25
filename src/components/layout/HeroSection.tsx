@@ -97,7 +97,7 @@ export function HeroSection() {
                   P
                 </div>
                 <div>
-                  <div className="text-[14px] font-extrabold text-gray-900">Pilar · The Fluency House</div>
+                  <div className="text-[14px] font-extrabold text-gray-900">The Fluency House</div>
                   <div className="text-[12px] font-bold text-green-600 flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-400 inline-block animate-pulse-dot" />
                     Class in session

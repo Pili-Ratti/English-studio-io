@@ -53,7 +53,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <p className="text-[13px] font-semibold">
-            © {new Date().getFullYear()} The Fluency House · Pilar Ratti
+            © {new Date().getFullYear()} The Fluency House
           </p>
           <div className="flex bg-white/[0.06] border border-white/10 rounded-full p-[3px] gap-0.5">
             <button className="text-[13px] font-bold px-3.5 py-[5px] rounded-full text-white/50 bg-transparent border-0 cursor-pointer">ES</button>

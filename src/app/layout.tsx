@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "The Fluency House | Personalized English classes online",
   description: "Real-world English built around you. No student books, no generic worksheets. Custom classes designed for your goals, your interests, your level. Free trial class.",
   keywords: ["English classes online", "personalized English", "English teacher Argentina", "conversational English", "business English", "learn English Buenos Aires"],
-  authors: [{ name: "Pilar Ratti" }],
+  authors: [{ name: "The Fluency House" }],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
