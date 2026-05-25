@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://thefluencyhouse.com"),
   title: "The Fluency House | Clases de inglés personalizadas online",
   description:
     "Clases de inglés personalizadas para cada estudiante. Sin libros de texto genéricos — cada clase construida para vos, tu nivel y tus objetivos. Primera clase gratis. Online vía Zoom o Google Meet.",

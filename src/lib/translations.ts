@@ -6,6 +6,8 @@ export const translations = {
       how: "How it works",
       plans: "Plans",
       faq: "FAQ",
+      blog: "Blog",
+      explore: "Explorar",
       cta: "Book free class",
     },
     hero: {
@@ -227,6 +229,8 @@ export const translations = {
       how: "Cómo funciona",
       plans: "Planes",
       faq: "FAQ",
+      blog: "Blog",
+      explore: "Explorar",
       cta: "Reservar clase gratis",
     },
     hero: {

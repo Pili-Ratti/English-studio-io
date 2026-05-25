@@ -2,6 +2,7 @@
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 import Waves from "@/components/ui/Waves";
+import { BOOKING_URL } from "@/lib/constants";
 
 const topicPills = [
   { label: "Business English", color: "bg-orange-100 text-orange-700 border-orange-200" },
@@ -71,7 +72,7 @@ export function HeroSection() {
             </p>
 
             <div className="flex gap-3 flex-wrap mb-8">
-              <a href="#pricing"
+              <a href={BOOKING_URL}
                 className="inline-flex items-center justify-center font-bold text-[15px] md:text-[16px] bg-green-500 text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline">
                 {h.cta1}
               </a>

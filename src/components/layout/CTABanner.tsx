@@ -1,6 +1,7 @@
 "use client";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import { BOOKING_URL } from "@/lib/constants";
 
 export function CTABanner() {
   const { lang } = useLanguage();
@@ -20,7 +21,7 @@ export function CTABanner() {
         </h2>
         <p className="text-[18px] text-white/70 mb-9">{t.sub}</p>
         <a
-          href="#"
+          href={BOOKING_URL}
           className="inline-flex items-center justify-center font-bold text-[16px] md:text-[17px] bg-green-500 text-white px-8 md:px-12 py-4 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline w-full sm:w-auto"
         >
           {t.btn}

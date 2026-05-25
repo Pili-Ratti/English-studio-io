@@ -1,14 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import { BOOKING_URL } from "@/lib/constants";
 
 export function NavBar() {
   const { lang, setLang } = useLanguage();
   const t = translations[lang].nav;
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Close menu on route hash change
   useEffect(() => {
     const close = () => setMenuOpen(false);
     window.addEventListener("hashchange", close);
@@ -20,7 +21,7 @@ export function NavBar() {
       <div className="max-w-[1140px] mx-auto px-5 h-[64px] flex items-center gap-4">
 
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 font-bold text-[17px] text-gray-900 flex-shrink-0 no-underline">
+        <a href="/" className="flex items-center gap-2 font-bold text-[17px] text-gray-900 flex-shrink-0 no-underline">
           <div className="w-[32px] h-[32px] rounded-full flex items-center justify-center"
             style={{ background: "linear-gradient(135deg, #22C55E, #16A34A)" }}>
             <HouseIcon />
@@ -30,9 +31,11 @@ export function NavBar() {
 
         {/* Desktop nav links */}
         <div className="hidden md:flex gap-1 items-center ml-auto">
-          <a href="#how-it-works" className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.how}</a>
-          <a href="#pricing" className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.plans}</a>
-          <a href="#faq" className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.faq}</a>
+          <a href="/#how-it-works" className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.how}</a>
+          <a href="/#pricing"      className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.plans}</a>
+          <a href="/#faq"          className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.faq}</a>
+          <Link href="/blog"       className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.blog}</Link>
+          <Link href="/explorar"  className="text-[15px] font-semibold text-gray-500 px-3.5 py-2 rounded-full hover:text-gray-900 hover:bg-gray-50 transition-colors no-underline">{t.explore}</Link>
         </div>
 
         {/* Lang toggle */}
@@ -51,7 +54,7 @@ export function NavBar() {
         </div>
 
         {/* Desktop CTA */}
-        <a href="#pricing"
+        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer"
           className="hidden md:inline-flex items-center justify-center font-bold text-[14px] bg-green-500 text-white px-5 py-2.5 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline whitespace-nowrap">
           {t.cta}
         </a>
@@ -73,21 +76,29 @@ export function NavBar() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[320px] border-b border-gray-100" : "max-h-0"}`}>
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-[360px] border-b border-gray-100" : "max-h-0"}`}>
         <div className="px-5 py-4 flex flex-col gap-1 bg-white">
-          <a href="#how-it-works" onClick={() => setMenuOpen(false)}
+          <a href="/#how-it-works" onClick={() => setMenuOpen(false)}
             className="text-[16px] font-semibold text-gray-700 px-4 py-3 rounded-xl hover:bg-gray-50 no-underline transition-colors">
             {t.how}
           </a>
-          <a href="#pricing" onClick={() => setMenuOpen(false)}
+          <a href="/#pricing" onClick={() => setMenuOpen(false)}
             className="text-[16px] font-semibold text-gray-700 px-4 py-3 rounded-xl hover:bg-gray-50 no-underline transition-colors">
             {t.plans}
           </a>
-          <a href="#faq" onClick={() => setMenuOpen(false)}
+          <a href="/#faq" onClick={() => setMenuOpen(false)}
             className="text-[16px] font-semibold text-gray-700 px-4 py-3 rounded-xl hover:bg-gray-50 no-underline transition-colors">
             {t.faq}
           </a>
-          <a href="#pricing" onClick={() => setMenuOpen(false)}
+          <Link href="/blog" onClick={() => setMenuOpen(false)}
+            className="text-[16px] font-semibold text-gray-700 px-4 py-3 rounded-xl hover:bg-gray-50 no-underline transition-colors">
+            {t.blog}
+          </Link>
+          <Link href="/explorar" onClick={() => setMenuOpen(false)}
+            className="text-[16px] font-semibold text-gray-700 px-4 py-3 rounded-xl hover:bg-gray-50 no-underline transition-colors">
+            {t.explore}
+          </Link>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}
             className="mt-2 text-center font-bold text-[15px] bg-green-500 text-white px-5 py-3 rounded-full hover:bg-green-600 transition-colors no-underline">
             {t.cta}
           </a>
