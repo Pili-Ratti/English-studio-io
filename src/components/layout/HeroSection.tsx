@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
+import Link from "next/link";
 import Waves from "@/components/ui/Waves";
 import ShinyText from "@/components/ui/ShinyText";
 import { BOOKING_URL } from "@/lib/constants";
@@ -117,7 +118,7 @@ export function HeroSection() {
               {h.sub}
             </p>
 
-            <div className="flex gap-3 flex-wrap mb-8">
+            <div className="flex gap-3 flex-wrap mb-4">
               <a href={BOOKING_URL}
                 className="inline-flex items-center justify-center font-bold text-[15px] md:text-[16px] bg-green-500 text-white px-6 md:px-8 py-3.5 rounded-full hover:bg-green-600 transition-colors duration-150 no-underline">
                 {h.cta1}
@@ -127,6 +128,11 @@ export function HeroSection() {
                 {h.cta2}
               </a>
             </div>
+            <Link href="/evaluacion"
+              className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-gray-400 hover:text-green-600 transition-colors no-underline mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-300 inline-block" />
+              {lang === "es" ? "¿No sabés qué plan es para vos? Hacé el assessment →" : "Not sure which plan fits you? Take the assessment →"}
+            </Link>
 
             {/* Social proof row */}
             <div className="flex flex-wrap gap-6">
