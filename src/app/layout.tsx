@@ -74,11 +74,11 @@ const structuredData = {
             name: "Conversación",
             description:
               "Sesión semanal de conversación de 60 minutos. Feedback en tiempo real, vocabulario en contexto, contenido adaptado a tus intereses.",
-            price: "35",
+            price: "30",
             priceCurrency: "USD",
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: "120",
+              price: "180",
               priceCurrency: "USD",
               billingDuration: "P1M",
             },
@@ -88,11 +88,11 @@ const structuredData = {
             name: "Full English",
             description:
               "Clase estructurada semanal de 90 minutos. Cubre gramática, vocabulario, listening, speaking y escritura con presentación personalizada en cada sesión.",
-            price: "45",
+            price: "30",
             priceCurrency: "USD",
             priceSpecification: {
               "@type": "PriceSpecification",
-              price: "160",
+              price: "180",
               priceCurrency: "USD",
               billingDuration: "P1M",
             },
@@ -135,7 +135,7 @@ const structuredData = {
           name: "¿Cuánto cuestan las clases de inglés?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Las clases de Conversación cuestan USD 35 por clase o USD 120 por mes. Las clases Full English cuestan USD 45 por clase o USD 160 por mes. También hay opciones grupales a menor precio. La primera clase es siempre gratis.",
+            text: "Las clases individuales cuestan USD 30 por hora (USD 180 por mes). Las clases grupales cuestan USD 20 por persona por hora (USD 120 por mes). El precio es el mismo para Conversación y Full English. La primera clase es siempre gratis.",
           },
         },
         {
@@ -159,7 +159,7 @@ const structuredData = {
           name: "How much do the English classes cost?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Conversation classes cost $35 per class or $120 per month. Full English classes cost $45 per class or $160 per month. Group pricing is also available. The first class is always free.",
+            text: "Individual classes cost $30 per hour ($180 per month). Group classes cost $20 per person per hour ($120 per month). The price is the same for Conversation and Full English. The first class is always free.",
           },
         },
       ],
